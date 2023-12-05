@@ -593,3 +593,21 @@ class Ludo:
 
         Label(self.make_canvas,text="Player 1",bg="#141414",fg="gold",font=("Arial",15,"bold")).place(x=15,y=15+140+50)
         self.store_instructional_btn(block_predict_red,predict_red,[btn_1,btn_2,btn_3,btn_4])
+
+    def instruction_btn_sky_blue(self):
+        block_predict_sky_blue = Label(self.make_canvas, image=self.block_number_side[0])
+        block_predict_sky_blue.place(x=34, y=15+(40*6+40*3)+10)
+        predict_sky_blue = Button(self.make_canvas, bg="black", fg="#00FF00", relief=RAISED, bd=5, text="Predict",font=("Arial", 8, "bold"), command=lambda: self.make_prediction("sky_blue"))
+        predict_sky_blue.place(x=25, y=15+(40*6+40*3)+40 + 20)
+
+        btn_1 = Button(self.make_canvas,bg="#262626",fg="#00eb00",text="1",font=("Arial",13,"bold","italic"),relief=RAISED,bd=3,command=lambda: self.main_controller("sky_blue",'1'), state=DISABLED, disabledforeground="red")
+        btn_1.place(x=20,y=15+(40*6+40*3)+40 + 70)
+        btn_2 = Button(self.make_canvas,bg="#262626",fg="#00eb00",text="2",font=("Arial",13,"bold","italic"),relief=RAISED,bd=3,command=lambda: self.main_controller("sky_blue",'2'), state=DISABLED, disabledforeground="red")
+        btn_2.place(x=60,y=15+(40*6+40*3)+40 + 70)
+        btn_3 = Button(self.make_canvas,bg="#262626",fg="#00eb00",text="3",font=("Arial",13,"bold","italic"),relief=RAISED,bd=3,command=lambda: self.main_controller("sky_blue",'3'), state=DISABLED, disabledforeground="red")
+        btn_3.place(x=20,y=15+(40*6+40*3)+40 + 70+ 40)
+        btn_4 = Button(self.make_canvas,bg="#262626",fg="#00eb00",text="4",font=("Arial",13,"bold","italic"),relief=RAISED,bd=3,command=lambda: self.main_controller("sky_blue",'4'), state=DISABLED, disabledforeground="red")
+        btn_4.place(x=60,y=15+(40*6+40*3)+40 + 70+ 40)
+
+        Label(self.make_canvas, text="Player 2", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=12,y=15+(40*6+40*3)+40 + 110+50)
+        self.store_instructional_btn(block_predict_sky_blue, predict_sky_blue, [btn_1,btn_2,btn_3,btn_4]
