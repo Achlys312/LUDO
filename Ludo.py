@@ -509,4 +509,19 @@ class Ludo:
             else:
                 temp = self.sky_blue_coord_store
 
-            
+            if  permanent_block_number<6:
+                if self.six_with_overlap == 1:
+                    self.time_for-=1
+                    self.six_with_overlap=0
+                for i in range(4):
+                    if  temp[i] == -1:
+                        permission=0
+                    elif temp[i]>100:
+                        if  temp[i]+permanent_block_number<=106:
+                            permission=1
+                            break
+                        else:
+                            permission=0
+                    else:
+                        permission=1
+                        break
