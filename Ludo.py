@@ -1017,3 +1017,9 @@ class Ludo:
                     self.red_number_label[take_coin_number].place_forget()
                     self.red_coin_position[take_coin_number] = -1
                     self.red_coord_store[take_coin_number] = -1
+
+                    if self.robo_prem == 1:
+                        self.robo_store.remove(take_coin_number+1)
+                        if self.red_coin_position.count(-1)>=1:
+                            self.count_robo_stage_from_start = 2
+                            
