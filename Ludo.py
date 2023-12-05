@@ -629,3 +629,21 @@ class Ludo:
         
         Label(self.make_canvas, text="Player 3", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=100 + (40 * 6 + 40 * 3 + 40 * 6 +7),y=15+(40*6+40*3)+40 + 110+50)
         self.store_instructional_btn(block_predict_yellow, predict_yellow, [btn_1,btn_2,btn_3,btn_4])
+
+    def instruction_btn_green(self):
+        block_predict_green = Label(self.make_canvas, image=self.block_number_side[0])
+        block_predict_green.place(x=100+(40*6+40*3+40*6+10)+20, y=15)
+        predict_green = Button(self.make_canvas, bg="black", fg="#00FF00", relief=RAISED, bd=5, text="Predict", font=("Arial", 8, "bold"), command=lambda: self.make_prediction("green"))
+        predict_green.place(x=100+(40*6+40*3+40*6+2)+20, y=15 + 50)
+        
+        btn_1 = Button(self.make_canvas,bg="#262626",fg="#00eb00",text="1",font=("Arial",13,"bold","italic"),relief=RAISED,bd=3,command=lambda: self.main_controller("green",'1'), state=DISABLED, disabledforeground="red")
+        btn_1.place(x=100 + (40 * 6 + 40 * 3 + 40 * 6 + 2)+15,y=15+100)
+        btn_2 = Button(self.make_canvas,bg="#262626",fg="#00eb00",text="2",font=("Arial",13,"bold","italic"),relief=RAISED,bd=3,command=lambda: self.main_controller("green",'2'), state=DISABLED, disabledforeground="red")
+        btn_2.place(x=100 + (40 * 6 + 40 * 3 + 40 * 6 + 2)+15 + 40,y=15+100)
+        btn_3 = Button(self.make_canvas,bg="#262626",fg="#00eb00",text="3",font=("Arial",13,"bold","italic"),relief=RAISED,bd=3,command=lambda: self.main_controller("green",'3'), state=DISABLED, disabledforeground="red")
+        btn_3.place(x=100 + (40 * 6 + 40 * 3 + 40 * 6 + 2)+15,y=15+100+40)
+        btn_4 = Button(self.make_canvas,bg="#262626",fg="#00eb00",text="4",font=("Arial",13,"bold","italic"),relief=RAISED,bd=3,command=lambda: self.main_controller("green",'4'), state=DISABLED, disabledforeground="red")
+        btn_4.place(x=100 + (40 * 6 + 40 * 3 + 40 * 6 + 2)+15 + 40,y=15+100+40)
+        
+        Label(self.make_canvas, text="Player 4", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=100+(40*6+40*3+40*6+7), y=15+140+50)
+        self.store_instructional_btn(block_predict_green, predict_green, [btn_1,btn_2,btn_3,btn_4])
