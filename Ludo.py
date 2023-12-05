@@ -705,3 +705,12 @@ class Ludo:
         self.sky_blue_coin_position[int(coin_number) - 1] = 40
         self.window.update()
         time.sleep(0.2)
+        
+            def num_btns_state_controller(self, take_nums_btns_list, state_control = 1):
+        if state_control:
+            for num_btn in take_nums_btns_list:
+                num_btn['state'] = NORMAL
+        else:
+            for num_btn in take_nums_btns_list:
+                num_btn['state'] = DISABLED
+
