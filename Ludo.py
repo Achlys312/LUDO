@@ -1050,3 +1050,11 @@ class Ludo:
                     self.green_number_label[take_coin_number].place_forget()
                     self.green_coin_position[take_coin_number] = -1
                     self.green_coord_store[take_coin_number] = -1
+
+                    if take_coin_number == 0:
+                        remade_coin = self.make_canvas.create_oval(340+(40*3)+40, 15 + 40, 340+(40*3)+40 + 40, 15 + 40 + 40, width=3, fill="#00FF00", outline="black")
+                        self.green_number_label[take_coin_number].place(x=340 + (40 * 3) + 40 + 10, y=15 + 40 + 5)
+                    elif take_coin_number == 1:
+                        remade_coin = self.make_canvas.create_oval(340+(40*3)+40+ 60 + 40+20, 15 + 40, 340+(40*3)+40 + 60 + 40 + 40+20, 15 + 40 + 40, width=3, fill="#00FF00", outline="black")
+                        self.green_number_label[take_coin_number].place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=15 + 40 + 5)
+                    
