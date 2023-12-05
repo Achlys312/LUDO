@@ -558,3 +558,20 @@ class Ludo:
 
         if self.robo_prem == 1 and robo_operator:
             self.robo_judge(robo_operator)
+    
+    # Player Scope controller
+    def make_command(self, robo_operator=None):
+        if  self.time_for == -1:
+            pass
+        else:
+            self.block_value_predict[self.total_people_play[self.time_for]][1]['state'] = DISABLED
+        if  self.time_for == len(self.total_people_play)-1:
+            self.time_for = -1
+
+        self.time_for+=1
+        self.block_value_predict[self.total_people_play[self.time_for]][1]['state'] = NORMAL
+        
+        if self.robo_prem==1 and self.time_for == 0:
+            robo_operator = "predict"
+        if robo_operator:
+            self.robo_judge(robo_operator)
