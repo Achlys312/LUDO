@@ -647,3 +647,10 @@ class Ludo:
         
         Label(self.make_canvas, text="Player 4", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=100+(40*6+40*3+40*6+7), y=15+140+50)
         self.store_instructional_btn(block_predict_green, predict_green, [btn_1,btn_2,btn_3,btn_4])
+    
+    def store_instructional_btn(self, block_indicator, predictor, entry_controller):
+        temp = []
+        temp.append(block_indicator)
+        temp.append(predictor)
+        temp.append(entry_controller)
+        self.block_value_predict.append(temp)
