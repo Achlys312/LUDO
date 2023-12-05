@@ -1003,3 +1003,8 @@ class Ludo:
             return counter_coin
         except:
             print("Force Stop Error Came in motion of coin")
+
+    def coord_overlap(self, counter_coin, color_coin, path_to_traverse_before_overlap):
+        if  color_coin!="red":
+            for take_coin_number in range(len(self.red_coord_store)):
+                if  self.red_coord_store[take_coin_number] == counter_coin:        
