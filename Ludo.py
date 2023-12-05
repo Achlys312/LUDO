@@ -28,3 +28,20 @@ class Ludo:
 
         # Ludo block all side image store
         self.block_number_side = [one_side_block, two_side_block, three_side_block, four_side_block, five_side_block, six_side_block]
+        
+        # Use for store specific position of all coins
+        self.red_coord_store = [-1, -1, -1, -1]
+        self.green_coord_store = [-1, -1, -1, -1]
+        self.yellow_coord_store = [-1, -1, -1, -1]
+        self.sky_blue_coord_store = [-1, -1, -1, -1]
+
+        self.red_coin_position = [0, 1, 2, 3]
+        self.green_coin_position = [0, 1, 2, 3]
+        self.yellow_coin_position = [0, 1, 2, 3]
+        self.sky_blue_coin_position = [0, 1, 2, 3]
+
+        for index in range(len(self.red_coin_position)):# Specific coin position set to -1 by default
+            self.red_coin_position[index] = -1
+            self.green_coin_position[index] = -1
+            self.yellow_coin_position[index] = -1
+            self.sky_blue_coin_position[index] = -1
