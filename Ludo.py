@@ -340,3 +340,16 @@ class Ludo:
         for i in range(4):
             self.block_value_predict[i][1]['state'] = DISABLED
     
+        # Make other window to control take
+        top = Toplevel()
+        top.geometry("530x300")
+        top.maxsize(530,300)
+        top.minsize(530,300)
+        top.config(bg="#141414")
+        top.iconbitmap("Images/ludo_icon.ico")
+
+        head = Label(top,text="-:Total number of players:- ",font=("Arial",25,"bold","italic"),bg="#141414",fg="chocolate")
+        head.place(x=50,y=30)
+        take_entry = Entry(top,font=("Arial",18,"bold","italic"),relief=SUNKEN,bd=5,width=12, state=DISABLED)
+        take_entry.place(x=130,y=85)
+        take_entry.focus()
