@@ -382,3 +382,19 @@ class Ludo:
                 for player_index in range(2):
                     self.total_people_play.append(player_index)
                 print(self.total_people_play)
+                def delay_with_instrctions(time_is):
+                    if place_ins['text'] != "":
+                        place_ins.place_forget()
+                    if command_play['text'] != "":
+                        command_play.place_forget()
+                
+                    place_ins['text'] = f"  Your game will start within {time_is} sec"
+                    place_ins.place(x=20, y=220)
+
+                    if time_is > 5:
+                        command_play['text'] = f"             Machine Play With Red and You Play With Sky Blue"
+                    elif time_is>= 2 and time_is<5:
+                        command_play['text'] = f"                       You Will Get the First Chance to play"
+                    else: 
+                        command_play['text'] = f"                                        Enjoy this Game"
+                    command_play.place(x=10, y=260)
