@@ -1100,4 +1100,11 @@ class Ludo:
                     if path_to_traverse_before_overlap == 6:
                         self.six_with_overlap = 1
                     else:
-                        self.time_for -= 1            
+                        self.time_for -= 1        
+
+                    self.make_canvas.delete(self.made_sky_blue_coin[take_coin_number])
+                    self.sky_blue_number_label[take_coin_number].place_forget()
+                    self.sky_blue_coin_position[take_coin_number] = -1
+                    self.sky_blue_coord_store[take_coin_number]=-1
+    
+                    
