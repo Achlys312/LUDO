@@ -551,4 +551,10 @@ class Ludo:
                 self.six_with_overlap = 0
             self.make_command()        
             
-        
+        if  permanent_block_number == 6 and self.six_counter<3 and block_value_predict[2][0]['state'] == NORMAL:
+            self.time_for-=1
+        else:
+            self.six_counter=0
+
+        if self.robo_prem == 1 and robo_operator:
+            self.robo_judge(robo_operator)
