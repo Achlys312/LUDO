@@ -114,4 +114,30 @@ class Ludo:
         self.make_canvas.create_rectangle(100+240+40, (15 + 240)+(40*3), 100 + 240+40+40, (15 + 240)+(40*3)+(40*6)-40, width=3, fill="#04d9ff")
         self.make_canvas.create_rectangle(100 + 240+40+40, (15 + 240)+(40*3), 100 + 240+40+40+40, (15 + 240)+(40*3)+(40*6), width=3)
         
-        
+        start_x = 100 + 40
+        start_y = 15 + 240
+        end_x = 100 + 40
+        end_y = 15 + 240 + (40 * 3)
+        for _ in range(5):
+            self.make_canvas.create_line(start_x, start_y, end_x, end_y, width=3)
+            start_x+=40
+            end_x+= 40
+
+        # All right separation line
+        start_x = 100+240+(40*3)+40
+        start_y = 15 + 240
+        end_x = 100+240+(40*3)+40
+        end_y = 15 + 240 + (40 * 3)
+        for _ in range(5):
+            self.make_canvas.create_line(start_x, start_y, end_x, end_y, width=3)
+            start_x += 40
+            end_x += 40
+
+        # All up separation done
+        start_x = 100+240
+        start_y = 15+40
+        end_x = 100+240+(40*3)
+        end_y = 15+40
+        for _ in range(5):
+            self.make_canvas.create_line(start_x, start_y, end_x, end_y, width=3)
+            start_y += 40
