@@ -1107,4 +1107,7 @@ class Ludo:
                     self.sky_blue_coin_position[take_coin_number] = -1
                     self.sky_blue_coord_store[take_coin_number]=-1
     
+                    if take_coin_number == 0:
+                        remade_coin = self.make_canvas.create_oval(100 + 40, 340+80+15, 100 + 40 + 40, 340+80+40+15, width=3, fill="#04d9ff", outline="black")
+                        self.sky_blue_number_label[take_coin_number].place(x=100+40+10, y=30 + (40*6)+(40*3)+40+10)
                     
