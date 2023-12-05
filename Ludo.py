@@ -436,3 +436,14 @@ class Ludo:
                     self.count_robo_stage_from_start += 1
                 else:    
                     permanent_block_number = self.move_red_counter = randint(1, 6)
+
+            elif color_indicator == "sky_blue":
+                block_value_predict = self.block_value_predict[1]
+                permanent_block_number = self.move_sky_blue_counter = randint(1, 6)
+                if self.robo_prem and permanent_block_number == 6:
+                    for coin_loc in self.red_coin_position:
+                        if coin_loc>=40 and coin_loc<=46:
+                            permanent_block_number = self.move_sky_blue_counter = randint(1, 5)
+                            break
+
+                        
