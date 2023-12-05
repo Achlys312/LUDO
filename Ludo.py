@@ -454,3 +454,22 @@ class Ludo:
                 permanent_block_number = self.move_green_counter = randint(1, 6)
 
             block_value_predict[1]['state'] = DISABLED
+
+            temp_counter = 12
+            while temp_counter>0:
+                move_temp_counter = randint(1, 6)
+                block_value_predict[0]['image'] = self.block_number_side[move_temp_counter - 1]
+                self.window.update()
+                time.sleep(0.1)
+                temp_counter-=1
+
+            print("Prediction result: ", permanent_block_number)
+
+            #Permanent predicted value containing image set
+            block_value_predict[0]['image'] = self.block_number_side[permanent_block_number-1]
+            if self.robo_prem == 1 and color_indicator == "red":
+                self.window.update()
+                time.sleep(0.4)
+            self.instructional_btn_customization_based_on_current_situation(color_indicator,permanent_block_number,block_value_predict)
+        except:
+            print("Force Stop Error in Prediction")
