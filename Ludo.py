@@ -497,3 +497,16 @@ class Ludo:
             self.six_counter += 1
         else:
             self.six_counter = 0
+
+        if ((all_in == 1 and permanent_block_number == 6) or (all_in==0)) and self.six_counter<3:
+            permission = 1
+            if color_indicator == "red":
+                temp = self.red_coord_store
+            elif color_indicator == "green":
+                temp = self.green_coord_store
+            elif color_indicator == "yellow":
+                temp = self.yellow_coord_store
+            else:
+                temp = self.sky_blue_coord_store
+
+            
