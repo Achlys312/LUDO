@@ -1136,3 +1136,9 @@ class Ludo:
         elif color_coin == "yellow" and counter_coin >= 100:
             if int(counter_coin)+int(path_counter)<=106:
                 counter_coin = self.room_yellow_traversal(specific_coin, number_label, number_label_x, number_label_y, path_counter, counter_coin)
+
+        elif color_coin == "sky_blue" and counter_coin >= 100:
+            if  int(counter_coin) + int(path_counter) <= 106:
+                counter_coin = self.room_sky_blue_traversal(specific_coin, number_label, number_label_x, number_label_y,path_counter,counter_coin)
+
+                
