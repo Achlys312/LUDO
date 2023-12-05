@@ -525,3 +525,16 @@ class Ludo:
                     else:
                         permission=1
                         break
+
+            else:
+                for i in range(4):
+                    if  temp[i]>100:
+                        if  temp[i] + permanent_block_number <= 106:
+                            permission = 1
+                            break
+                        else:
+                            permission = 0
+                    else:
+                        permission = 1
+                        break
+            
