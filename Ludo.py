@@ -425,4 +425,14 @@ class Ludo:
 
         top.mainloop()
 
-        
+    def make_prediction(self,color_indicator):
+        try:
+            if color_indicator == "red":
+                block_value_predict = self.block_value_predict[0]
+                if self.robo_prem and self.count_robo_stage_from_start < 3:
+                    self.count_robo_stage_from_start += 1
+                if self.robo_prem and self.count_robo_stage_from_start == 3 and self.six_counter < 2:
+                    permanent_block_number = self.move_red_counter = 6
+                    self.count_robo_stage_from_start += 1
+                else:    
+                    permanent_block_number = self.move_red_counter = randint(1, 6)
