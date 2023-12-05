@@ -141,3 +141,27 @@ class Ludo:
         for _ in range(5):
             self.make_canvas.create_line(start_x, start_y, end_x, end_y, width=3)
             start_y += 40
+            end_y += 40
+
+        # All down separation done
+        start_x = 100 + 240
+        start_y = 15 + (40*6)+(40*3)+40
+        end_x = 100 + 240 + (40 * 3)
+        end_y = 15 + (40*6)+(40*3)+40
+        for _ in range(5):
+            self.make_canvas.create_line(start_x, start_y, end_x, end_y, width=3)
+            start_y += 40
+            end_y += 40
+
+        # Square box(Coins containers) white region make
+        self.make_canvas.create_rectangle(100+20, 15+40-20, 100 + 40 + 60 + 40 +60+20, 15+40+40+40+100-20, width=3, fill="white")
+        self.make_canvas.create_rectangle(340+(40*3)+40 - 20, 15 + 40-20, 340+(40*3)+40 + 60 + 40 + 40+20+20, 15+40+40+40+100-20, width=3, fill="white")
+        self.make_canvas.create_rectangle(100+20, 340+80-20+15, 100 + 40 + 60 + 40 +60+20, 340+80+60+40+40+20+15, width=3, fill="white")
+        self.make_canvas.create_rectangle(340+(40*3)+40 - 20, 340 + 80 - 20+15, 340+(40*3)+40 + 60 + 40 + 40+20+20, 340 + 80 + 60 + 40 + 40 + 20+15, width=3, fill="white")
+
+
+        # Left up square inside box made
+        self.make_canvas.create_rectangle(100+40, 15+40, 100+40+40, 15+40+40, width=3, fill="red")
+        self.make_canvas.create_rectangle(100+40+60+60, 15 + 40, 100+40+60+40+60, 15 + 40 + 40, width=3, fill="red")
+        self.make_canvas.create_rectangle(100 + 40, 15 + 40+100, 100 + 40 + 40, 15 + 40 + 40+100, width=3, fill="red")
+        self.make_canvas.create_rectangle(100 + 40 + 60 + 60, 15 + 40+100, 100 + 40 + 60 + 40 +60, 15 + 40 + 40+100, width=3, fill="red")
