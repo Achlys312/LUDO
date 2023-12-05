@@ -1012,4 +1012,8 @@ class Ludo:
                         self.six_with_overlap=1
                     else:
                         self.time_for-=1
-                        
+                    
+                    self.make_canvas.delete(self.made_red_coin[take_coin_number])
+                    self.red_number_label[take_coin_number].place_forget()
+                    self.red_coin_position[take_coin_number] = -1
+                    self.red_coord_store[take_coin_number] = -1
