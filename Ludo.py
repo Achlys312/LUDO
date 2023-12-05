@@ -372,3 +372,8 @@ class Ludo:
                 messagebox.showerror("Input Error", "Please input number of players between 2 and 4")
                 top.destroy()
                 self.take_initial_control()
+        
+        submit_btn = Button(top,text="Submit",bg="#262626",fg="#00FF00",font=("Arial",13,"bold"),relief=RAISED,bd=3,command=filtering,state=DISABLED)
+        submit_btn.place(x=330,y=87)
+
+        
