@@ -1022,4 +1022,8 @@ class Ludo:
                         self.robo_store.remove(take_coin_number+1)
                         if self.red_coin_position.count(-1)>=1:
                             self.count_robo_stage_from_start = 2
-                            
+                    
+                    if take_coin_number == 0:
+                       remade_coin = self.make_canvas.create_oval(100+40, 15+40, 100+40+40, 15+40+40, width=3, fill="red", outline="black")
+                       self.red_number_label[take_coin_number].place(x=100 + 40 + 10, y=15 + 40 + 5)
+
