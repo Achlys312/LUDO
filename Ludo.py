@@ -870,7 +870,30 @@ class Ludo:
                    
                    self.num_btns_state_controller(self.block_value_predict[1][2])
                    return
-                    
+                 if  self.sky_blue_coin_position[int(coin_number)-1]==22 or self.sky_blue_coin_position[int(coin_number)-1]==9 or self.sky_blue_coin_position[int(coin_number)-1]==48 or self.sky_blue_coin_position[int(coin_number)-1]==35 or self.sky_blue_coin_position[int(coin_number)-1]==1 or self.sky_blue_coin_position[int(coin_number)-1]==14 or self.sky_blue_coin_position[int(coin_number)-1]==27 or self.sky_blue_coin_position[int(coin_number)-1]==40:
+                    pass
+                else:
+                    if self.sky_blue_coin_position[int(coin_number) - 1] < 100:
+                        self.coord_overlap(self.sky_blue_coin_position[int(coin_number) - 1],color_coin, self.move_sky_blue_counter)
+
+                self.sky_blue_coord_store[int(coin_number) - 1] = self.sky_blue_coin_position[int(coin_number) - 1]
+
+            else:
+                messagebox.showerror("Wrong choice", "Sorry, Your coin in not permitted to travel")
+                self.num_btns_state_controller(self.block_value_predict[1][2])
+                return
+                
+             self.block_value_predict[1][1]['state'] = NORMAL
+
+        print(self.red_coord_store)
+        print(self.green_coord_store)
+        print(self.yellow_coord_store)
+        print(self.sky_blue_coord_store)
+        if self.robo_prem == 1:
+            print("Robo Store is: ", self.robo_store)
+        
+        permission_granted_to_proceed = True
+                 
             
                   
                    
