@@ -425,4 +425,136 @@ class Ludo:
 
         top.mainloop()
 
+    def make_prediction(self,color_indicator):
+        try:
+            if color_indicator == "red":
+                block_value_predict = self.block_value_predict[0]
+                if self.robo_prem and self.count_robo_stage_from_start < 3:
+                    self.count_robo_stage_from_start += 1
+                if self.robo_prem and self.count_robo_stage_from_start == 3 and self.six_counter < 2:
+                    permanent_block_number = self.move_red_counter = 6
+                    self.count_robo_stage_from_start += 1
+                else:    
+                    permanent_block_number = self.move_red_counter = randint(1, 6)
+
+            elif color_indicator == "sky_blue":
+                block_value_predict = self.block_value_predict[1]
+                permanent_block_number = self.move_sky_blue_counter = randint(1, 6)
+                if self.robo_prem and permanent_block_number == 6:
+                    for coin_loc in self.red_coin_position:
+                        if coin_loc>=40 and coin_loc<=46:
+                            permanent_block_number = self.move_sky_blue_counter = randint(1, 5)
+                            break
+            elif color_indicator == "yellow":
+                block_value_predict = self.block_value_predict[2]
+                permanent_block_number = self.move_yellow_counter = randint(1, 6)
+
+            else:
+                block_value_predict = self.block_value_predict[3]
+                permanent_block_number = self.move_green_counter = randint(1, 6)
+
+            block_value_predict[1]['state'] = DISABLED
+
+            temp_counter = 12
+            while temp_counter>0:
+                move_temp_counter = randint(1, 6)
+                block_value_predict[0]['image'] = self.block_number_side[move_temp_counter - 1]
+                self.window.update()
+                time.sleep(0.1)
+                temp_counter-=1
+
+            print("Prediction result: ", permanent_block_number)
+
+            #Permanent predicted value containing image set
+            block_value_predict[0]['image'] = self.block_number_side[permanent_block_number-1]
+            if self.robo_prem == 1 and color_indicator == "red":
+                self.window.update()
+                time.sleep(0.4)
+            self.instructional_btn_customization_based_on_current_situation(color_indicator,permanent_block_number,block_value_predict)
+        except:
+            print("Force Stop Error in Prediction")
+
+    def instructional_btn_customization_based_on_current_situation(self,color_indicator,permanent_block_number,block_value_predict):
+        robo_operator = None
+        if color_indicator == "red":
+            temp_coin_position = self.red_coin_position
+        elif color_indicator == "green":
+            temp_coin_position = self.green_coin_position
+        elif color_indicator == "yellow":
+            temp_coin_position = self.yellow_coin_position
+        else:
+            temp_coin_position = self.sky_blue_coin_position
+
+        all_in = 1
+        for i in range(4):
+            if temp_coin_position[i] == -1:
+                all_in = 1
+            else:
+                all_in = 0
+                break
         
+        if  permanent_block_number == 6:
+            self.six_counter += 1
+        else:
+            self.six_counter = 0
+
+        if ((all_in == 1 and permanent_block_number == 6) or (all_in==0)) and self.six_counter<3:
+            permission = 1
+            if color_indicator == "red":
+                temp = self.red_coord_store
+            elif color_indicator == "green":
+                temp = self.green_coord_store
+            elif color_indicator == "yellow":
+                temp = self.yellow_coord_store
+            else:
+                temp = self.sky_blue_coord_store
+
+            if  permanent_block_number<6:
+                if self.six_with_overlap == 1:
+                    self.time_for-=1
+                    self.six_with_overlap=0
+                for i in range(4):
+                    if  temp[i] == -1:
+                        permission=0
+                    elif temp[i]>100:
+                        if  temp[i]+permanent_block_number<=106:
+                            permission=1
+                            break
+                        else:
+                            permission=0
+                    else:
+                        permission=1
+                        break
+
+            else:
+                for i in range(4):
+                    if  temp[i]>100:
+                        if  temp[i] + permanent_block_number <= 106:
+                            permission = 1
+                            break
+                        else:
+                            permission = 0
+                    else:
+                        permission = 1
+                        break
+            if permission == 0:
+                self.make_command(None)
+            else:
+                self.num_btns_state_controller(block_value_predict[2])
+                if self.robo_prem == 1 and block_value_predict == self.block_value_predict[0]:
+                    robo_operator = "give"
+                block_value_predict[1]['state'] = DISABLED# Predict btn deactivation
+        else:
+            block_value_predict[1]['state'] = NORMAL# Predict btn activation
+            if self.six_with_overlap == 1:
+                self.time_for -= 1
+                self.six_with_overlap = 0
+            self.make_command()        
+            
+        if  permanent_block_number == 6 and self.six_counter<3 and block_value_predict[2][0]['state'] == NORMAL:
+            self.time_for-=1
+        else:
+            self.six_counter=0
+
+        if self.robo_prem == 1 and robo_operator:
+            self.robo_judge(robo_operator)
