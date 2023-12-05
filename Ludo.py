@@ -610,7 +610,7 @@ class Ludo:
         btn_4.place(x=60,y=15+(40*6+40*3)+40 + 70+ 40)
 
         Label(self.make_canvas, text="Player 2", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=12,y=15+(40*6+40*3)+40 + 110+50)
-        self.store_instructional_btn(block_predict_sky_blue, predict_sky_blue, [btn_1,btn_2,btn_3,btn_4])
+        self.store_instructional_btn(block_predict_sky_blue, predict_sky_blue, [btn_1,btn_2,btn_3,btn_4]
         
     def instruction_btn_yellow(self):
         block_predict_yellow = Label(self.make_canvas, image=self.block_number_side[0])
@@ -681,7 +681,7 @@ class Ludo:
         self.window.update()
         time.sleep(0.2)
         
-    def yellow_circle_start_position(self,coin_number):
+         def yellow_circle_start_position(self,coin_number):
         self.make_canvas.delete(self.made_yellow_coin[int(coin_number)-1])
         self.made_yellow_coin[int(coin_number)-1] = self.make_canvas.create_oval(100 + (40 * 6)+(40*3)+(40*4), 15 + (40*8), 100 + (40 * 6)+(40*3)+(40*5), 15 + (40*9), fill="yellow", width=3)
 
@@ -694,7 +694,7 @@ class Ludo:
         self.window.update()
         time.sleep(0.2)
         
-    def sky_blue_circle_start_position(self,coin_number):
+         def sky_blue_circle_start_position(self,coin_number):
         self.make_canvas.delete(self.made_sky_blue_coin[int(coin_number)-1])
         self.made_sky_blue_coin[int(coin_number)-1] = self.make_canvas.create_oval(100+240,340+(40*5)-5,100+240+40,340+(40*6)-5,fill="#04d9ff",width=3)
 
@@ -707,7 +707,7 @@ class Ludo:
         self.window.update()
         time.sleep(0.2)
         
-    def num_btns_state_controller(self, take_nums_btns_list, state_control = 1):
+            def num_btns_state_controller(self, take_nums_btns_list, state_control = 1):
         if state_control:
             for num_btn in take_nums_btns_list:
                 num_btn['state'] = NORMAL
@@ -715,7 +715,7 @@ class Ludo:
             for num_btn in take_nums_btns_list:
                 num_btn['state'] = DISABLED
                 
-    def main_controller(self, color_coin, coin_number):
+         def main_controller(self, color_coin, coin_number):
         robo_operator = None
 
         if  color_coin == "red":
@@ -801,25 +801,25 @@ class Ludo:
 
                 self.green_coord_store[int(coin_number) - 1] = self.green_coin_position[int(coin_number) - 1]
 
-        else:
+            else:
                 messagebox.showerror("Wrong choice", "Sorry, Your coin in not permitted to travel")
                 self.num_btns_state_controller(self.block_value_predict[3][2])
                 return
 
-        self.block_value_predict[3][1]['state'] = NORMAL
+            self.block_value_predict[3][1]['state'] = NORMAL
             
-        elif color_coin == "yellow":
+              elif color_coin == "yellow":
             
-        self.num_btns_state_controller(self.block_value_predict[2][2], 0)
+            self.num_btns_state_controller(self.block_value_predict[2][2], 0)
 
-        if self.move_yellow_counter == 106:
+            if self.move_yellow_counter == 106:
                 messagebox.showwarning("Destination reached","Reached at the destination")
 
-         elif self.yellow_coin_position[int(coin_number) - 1] == -1 and self.move_yellow_counter == 6:
+            elif self.yellow_coin_position[int(coin_number) - 1] == -1 and self.move_yellow_counter == 6:
                 self.yellow_circle_start_position(coin_number)
                 self.yellow_coord_store[int(coin_number) - 1] = 27
 
-        elif self.yellow_coin_position[int(coin_number) - 1] > -1:
+            elif self.yellow_coin_position[int(coin_number) - 1] > -1:
                 take_coord = self.make_canvas.coords(self.made_yellow_coin[int(coin_number) - 1])
                 yellow_start_label_x = take_coord[0] + 10
                 yellow_start_label_y = take_coord[1] + 5
@@ -1187,5 +1187,59 @@ class Ludo:
             self.window.update()
             time.sleep(0.2)
         return counter_coin
+    
+    def check_winner_and_runner(self,color_coin):
+        destination_reached = 0 # Check for all specific color coins
+        if color_coin == "red":
+            temp_store = self.red_coord_store
+            temp_delete = 0# Player index
+        elif color_coin == "green":
+            temp_store = self.green_coord_store
+            temp_delete = 3# Player index
+        elif color_coin == "yellow":
+            temp_store = self.yellow_coord_store
+            temp_delete = 2# Player index
+        else:
+            temp_store = self.sky_blue_coord_store
+            temp_delete = 1# Player index
+
+        for take in temp_store:
+            if take == 106:
+                destination_reached = 1
+            else:
+                destination_reached = 0
+                break
+
+        if  destination_reached == 1:# If all coins in block reach to the destination, winner and runner check
+            self.take_permission += 1
+            if self.take_permission == 1:# Winner check
+                if self.robo_prem == 1 and color_coin == "red":
+                    messagebox.showinfo("Winner", "Hurrah! I am the winner")
+                else:
+                    messagebox.showinfo("Winner","Congrats! You are the winner")
+            elif self.take_permission == 2:# 1st runner check
+                if self.robo_prem == 1 and color_coin == "red":
+                    messagebox.showinfo("Winner", "Hurrah! I am 1st runner")
+                else:
+                    messagebox.showinfo("Winner", "Wow! You are 1st runner")
+            elif self.take_permission == 3:# 2nd runner check
+                if self.robo_prem == 1 and color_coin == "red":
+                    messagebox.showinfo("Result", "I am 2nd runner....Not bad at all")
+                else:
+                    messagebox.showinfo("Result", "You are 2nd runner....Better Luck next time")
+
+            self.block_value_predict[temp_delete][1]['state'] = DISABLED
+            self.total_people_play.remove(temp_delete)
+
+            if len(self.total_people_play) == 1:
+                messagebox.showinfo("Game Over","Good bye!!!!")
+                self.block_value_predict[0][1]['state'] = DISABLED
+                return False
+            else:
+                self.time_for-=1
+        else:
+            print("Winner not decided")
+
+        return True
 
                 
