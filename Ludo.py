@@ -541,3 +541,6 @@ class Ludo:
                 self.make_command(None)
             else:
                 self.num_btns_state_controller(block_value_predict[2])
+                if self.robo_prem == 1 and block_value_predict == self.block_value_predict[0]:
+                    robo_operator = "give"
+                block_value_predict[1]['state'] = DISABLED# Predict btn deactivation
