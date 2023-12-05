@@ -831,6 +831,33 @@ class Ludo:
                    
                    self.num_btns_state_controller(self.block_value_predict[2][2])
                    return
+                if  self.yellow_coin_position[int(coin_number)-1]==22 or self.yellow_coin_position[int(coin_number)-1]==9 or self.yellow_coin_position[int(coin_number)-1]==48 or self.yellow_coin_position[int(coin_number)-1]==35 or self.yellow_coin_position[int(coin_number)-1]==1 or self.yellow_coin_position[int(coin_number)-1]==14 or self.yellow_coin_position[int(coin_number)-1]==40 or self.yellow_coin_position[int(coin_number)-1]==27:
+                    pass
+                else:
+                    if self.yellow_coin_position[int(coin_number) - 1] < 100:
+                        self.coord_overlap(self.yellow_coin_position[int(coin_number) - 1],color_coin, self.move_yellow_counter)
+
+                self.yellow_coord_store[int(coin_number) - 1] = self.yellow_coin_position[int(coin_number) - 1]
+
+            else:
+                messagebox.showerror("Wrong choice", "Sorry, Your coin in not permitted to travel")
+                self.num_btns_state_controller(self.block_value_predict[2][2])
+                return
+
+            self.block_value_predict[2][1]['state'] = NORMAL
+
+ 
+        elif color_coin == "sky_blue":
+            self.num_btns_state_controller(self.block_value_predict[1][2], 0)   
+
+            if self.move_red_counter == 106:
+                messagebox.showwarning("Destination reached","Reached at the destination")
+
+            elif self.sky_blue_coin_position[int(coin_number) - 1] == -1 and self.move_sky_blue_counter == 6:
+                self.sky_blue_circle_start_position(coin_number)
+                self.sky_blue_coord_store[int(coin_number) - 1] = 40 
+            
+                  
                    
 
 
