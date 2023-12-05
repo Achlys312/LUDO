@@ -232,4 +232,18 @@ class Ludo:
         self.made_green_coin.append(green_2_coin)
         self.made_green_coin.append(green_3_coin)
         self.made_green_coin.append(green_4_coin)
+        
+         # Make coin under number label for green right up block
+        green_1_label = Label(self.make_canvas, text="1", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
+        green_1_label.place(x=340 + (40 * 3) + 40 + 10, y=15 + 40 + 5)
+        green_2_label = Label(self.make_canvas, text="2", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
+        green_2_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=15 + 40 + 5)
+        green_3_label = Label(self.make_canvas, text="3", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
+        green_3_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=15 + 40 + 100 + 5)
+        green_4_label = Label(self.make_canvas, text="4", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
+        green_4_label.place(x=340 + (40 * 3) + 40 + 10, y=15 + 40 + 100 + 5)
+        self.green_number_label.append(green_1_label)
+        self.green_number_label.append(green_2_label)
+        self.green_number_label.append(green_3_label)
+        self.green_number_label.append(green_4_label)
 
