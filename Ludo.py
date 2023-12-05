@@ -492,3 +492,8 @@ class Ludo:
             else:
                 all_in = 0
                 break
+        
+        if  permanent_block_number == 6:
+            self.six_counter += 1
+        else:
+            self.six_counter = 0
