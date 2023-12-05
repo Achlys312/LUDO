@@ -913,8 +913,12 @@ class Ludo:
             while True:
                 if path_counter == 0:
                     break
-            
-           
-                   
+                elif (counter_coin == 51 and color_coin == "red") or (counter_coin==12 and color_coin == "green") or (counter_coin == 25 and color_coin == "yellow") or (counter_coin == 38 and color_coin == "sky_blue") or counter_coin>=100:
+                    if counter_coin<100:
+                        counter_coin=100
+
+                    counter_coin = self.under_room_traversal_control(specific_coin, number_label, number_label_x, number_label_y, path_counter, counter_coin, color_coin)
+
+                    
 
 
