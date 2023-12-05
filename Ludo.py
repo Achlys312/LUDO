@@ -398,3 +398,7 @@ class Ludo:
                     else: 
                         command_play['text'] = f"                                        Enjoy this Game"
                     command_play.place(x=10, y=260)
+                    
+                time_is = 10
+                place_ins = Label(top, text="", font=("Arial", 20, "bold"), fg="#FF0000", bg="#141414")
+                command_play = Label(top, text="", font=("Arial", 12, "bold"), fg="#af7439", bg="#141414")
