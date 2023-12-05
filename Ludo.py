@@ -445,5 +445,12 @@ class Ludo:
                         if coin_loc>=40 and coin_loc<=46:
                             permanent_block_number = self.move_sky_blue_counter = randint(1, 5)
                             break
+            elif color_indicator == "yellow":
+                block_value_predict = self.block_value_predict[2]
+                permanent_block_number = self.move_yellow_counter = randint(1, 6)
 
-                        
+            else:
+                block_value_predict = self.block_value_predict[3]
+                permanent_block_number = self.move_green_counter = randint(1, 6)
+
+            block_value_predict[1]['state'] = DISABLED
