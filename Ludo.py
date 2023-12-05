@@ -1064,4 +1064,4 @@ class Ludo:
                         remade_coin = self.make_canvas.create_oval(340+(40*3)+40, 15 + 40 + 100, 340+(40*3)+40 + 40, 15 + 40 + 40 + 100, width=3, fill="#00FF00", outline="black")
                         self.green_number_label[take_coin_number].place(x=340+(40*3) + 40 + 10, y=15 + 40 + 100 + 5)
 
-                    
+                    self.made_green_coin[take_coin_number] = remade_coin
