@@ -713,4 +713,52 @@ class Ludo:
         else:
             for num_btn in take_nums_btns_list:
                 num_btn['state'] = DISABLED
+                
+         def main_controller(self, color_coin, coin_number):
+        robo_operator = None
+
+        if  color_coin == "red":
+            self.num_btns_state_controller(self.block_value_predict[0][2], 0)
+
+            if self.move_red_counter == 106:
+                messagebox.showwarning("Destination reached","Reached at the destination")
+
+            elif self.red_coin_position[int(coin_number)-1] == -1 and self.move_red_counter == 6:
+                self.red_circle_start_position(coin_number)
+                self.red_coord_store[int(coin_number) - 1] = 1
+
+            elif self.red_coin_position[int(coin_number)-1] > -1:
+                take_coord = self.make_canvas.coords(self.made_red_coin[int(coin_number)-1])
+                red_start_label_x = take_coord[0] + 10
+                red_start_label_y = take_coord[1] + 5
+                self.red_number_label[int(coin_number) - 1].place(x=red_start_label_x, y=red_start_label_y)
+
+                if self.red_coin_position[int(coin_number)-1]+self.move_red_counter<=106:
+                    self.red_coin_position[int(coin_number)-1] = self.motion_of_coin(self.red_coin_position[int(coin_number) - 1],self.made_red_coin[int(coin_number)-1],self.red_number_label[int(coin_number)-1],red_start_label_x,red_start_label_y,"red",self.move_red_counter) 
+                    if self.robo_prem and self.red_coin_position[int(coin_number)-1] == 106 and color_coin == "red":
+                        self.robo_store.remove(int(coin_number))
+                        print("After removing: ", self.robo_store)
+
+                else:
+                    if not self.robo_prem: 
+                            messagebox.showerror("Not possible","Sorry, not permitted")
+                    self.num_btns_state_controller(self.block_value_predict[0][2])
+
+                    if self.robo_prem:
+                        robo_operator = "give"
+                        self.robo_judge(robo_operator)
+                    return
+
+                if  self.red_coin_position[int(coin_number)-1]==22 or self.red_coin_position[int(coin_number)-1]==9 or self.red_coin_position[int(coin_number)-1]==48 or self.red_coin_position[int(coin_number)-1]==35 or self.red_coin_position[int(coin_number)-1]==14 or self.red_coin_position[int(coin_number)-1]==27 or self.red_coin_position[int(coin_number)-1]==40 or self.red_coin_position[int(coin_number)-1]==1:
+                    pass
+                else:
+                    if self.red_coin_position[int(coin_number) - 1] < 100:
+                        self.coord_overlap(self.red_coin_position[int(coin_number)-1],color_coin, self.move_red_counter)
+
+                self.red_coord_store[int(coin_number)-1] = self.red_coin_position[int(coin_number)-1]
+
+            else:
+                messagebox.showerror("Wrong choice","Sorry, Your coin in not permitted to travel")
+                self.num_btns_state_controller(self.block_value_predict[0][2])
+
 
