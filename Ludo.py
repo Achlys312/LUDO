@@ -856,6 +856,21 @@ class Ludo:
             elif self.sky_blue_coin_position[int(coin_number) - 1] == -1 and self.move_sky_blue_counter == 6:
                 self.sky_blue_circle_start_position(coin_number)
                 self.sky_blue_coord_store[int(coin_number) - 1] = 40 
+                
+            elif self.sky_blue_coin_position[int(coin_number) - 1] > -1:
+                take_coord = self.make_canvas.coords(self.made_sky_blue_coin[int(coin_number) - 1])
+                sky_blue_start_label_x = take_coord[0] + 10
+                sky_blue_start_label_y = take_coord[1] + 5
+                self.sky_blue_number_label[int(coin_number) - 1].place(x=sky_blue_start_label_x, y=sky_blue_start_label_y)
+
+                if  self.sky_blue_coin_position[int(coin_number) - 1] + self.move_sky_blue_counter <= 106:
+                    self.sky_blue_coin_position[int(coin_number) - 1] = self.motion_of_coin(self.sky_blue_coin_position[int(coin_number) - 1], self.made_sky_blue_coin[int(coin_number) - 1], self.sky_blue_number_label[int(coin_number) - 1], sky_blue_start_label_x, sky_blue_start_label_y, "sky_blue", self.move_sky_blue_counter)
+                else:
+                   messagebox.showerror("Not possible","No path available")
+                   
+                   self.num_btns_state_controller(self.block_value_predict[1][2])
+                   return
+                    
             
                   
                    
