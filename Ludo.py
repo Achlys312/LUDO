@@ -1177,5 +1177,15 @@ class Ludo:
             time.sleep(0.2)
         return counter_coin
     
+    def room_sky_blue_traversal(self, specific_coin, number_label, number_label_x, number_label_y,path_counter,counter_coin):
+        while path_counter > 0:
+            counter_coin += 1
+            path_counter -= 1
+            self.make_canvas.move(specific_coin, 0, -40)
+            number_label_y -= 40
+            number_label.place(x=number_label_x, y=number_label_y)
+            self.window.update()
+            time.sleep(0.2)
+        return counter_coin
 
                 
