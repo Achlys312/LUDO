@@ -692,3 +692,16 @@ class Ludo:
         self.yellow_coin_position[int(coin_number) - 1] = 27
         self.window.update()
         time.sleep(0.2)
+        
+         def sky_blue_circle_start_position(self,coin_number):
+        self.make_canvas.delete(self.made_sky_blue_coin[int(coin_number)-1])
+        self.made_sky_blue_coin[int(coin_number)-1] = self.make_canvas.create_oval(100+240,340+(40*5)-5,100+240+40,340+(40*6)-5,fill="#04d9ff",width=3)
+
+        self.sky_blue_number_label[int(coin_number)-1].place_forget()
+        sky_blue_start_label_x = 100+240 + 10
+        sky_blue_start_label_y = 340+(40*5)-5 + 5
+        self.sky_blue_number_label[int(coin_number) - 1].place(x=sky_blue_start_label_x, y=sky_blue_start_label_y)
+
+        self.sky_blue_coin_position[int(coin_number) - 1] = 40
+        self.window.update()
+        time.sleep(0.2)
