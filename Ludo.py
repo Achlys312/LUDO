@@ -1074,4 +1074,7 @@ class Ludo:
                     else:
                         self.time_for -= 1
 
-                       
+                    self.make_canvas.delete(self.made_yellow_coin[take_coin_number])
+                    self.yellow_number_label[take_coin_number].place_forget()
+                    self.yellow_coin_position[take_coin_number] = -1
+                    self.yellow_coord_store[take_coin_number] = -1
