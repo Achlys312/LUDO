@@ -295,4 +295,43 @@ class Ludo:
         self.yellow_number_label.append(yellow_3_label)
         self.yellow_number_label.append(yellow_4_label)
 
+        # Make star safe zone
+        """
+                                              A
+                                           L  *  B
+                                   K *  *  *     *  *  * C
+                                        *           *
+                                        J *        * D
+                                       *            *
+                                  I*  *  *      *  *  * E
+                                         H   *   F
+                                             G
+        """
+        # Right star
+        common_x = 340+(40*6)+20
+        common_y = 15+240+2
+        #              A                     B                        C                         D                        E                              F                    G                                  H                        I                            J                            K                         L
+        coord = [common_x,common_y,  common_x+5,common_y+15,  common_x+15,common_y+15,  common_x+8,common_y+20,    common_x+15,common_y+25,    common_x+5,common_y+25,    common_x,common_y+25+10,   common_x-5,common_y+25,   common_x-16,common_y+25,   common_x-8,common_y+15+5,   common_x-15,common_y+15,   common_x-5,common_y+15]
+        self.make_canvas.create_polygon(coord,width=3,fill="blue")
+
+        # Up star
+        common_x = 100+240+2+18
+        common_y = 15 + (40*2) + 2
+         #              A                              B                                   C                             D                                E                                        F                       G                                          H                               I                            J                                      K                                   L
+        coord = [common_x, common_y,   common_x + 5,   common_y + 15,      common_x + 15, common_y + 15,      common_x + 8, common_y + 20,     common_x + 15, common_y + 25,       common_x + 5, common_y + 25,      common_x, common_y + 25 + 10,    common_x - 5, common_y + 25,     common_x - 16, common_y + 25,     common_x - 8,common_y + 15 + 5,     common_x - 15,common_y + 15,     common_x - 5,common_y + 15]
+        self.make_canvas.create_polygon(coord, width=3, fill="blue")
+
+        # Left star
+        common_x = 100 + (40*2) + 2 +18
+        common_y = 15 + 240+(40*2) + 2
+        #                  A                     B                                   C                            D                                 E                                F                           G                                  H                                    I                                 J                                    K                                L
+        coord = [common_x, common_y,   common_x + 5, common_y + 15,    common_x + 15, common_y + 15,    common_x + 8,common_y + 20,    common_x + 15, common_y + 25,    common_x + 5, common_y + 25,    common_x, common_y + 25 + 10,    common_x - 5, common_y + 25,      common_x - 16, common_y + 25,     common_x - 8, common_y + 15 + 5,     common_x - 15, common_y + 15,     common_x - 5, common_y + 15]
+        self.make_canvas.create_polygon(coord, width=3, fill="blue")
+
+        # Down star
+        common_x = 100 + 240 + (40*2) + 2 + 18
+        common_y = 15 + (40 * 6) + (40*3)+(40*3)+2
+        #              A                         B                             C                                       D                        E                                       F                                   G                                     H                                  I                                  J                                  K                                  L
+        coord = [common_x, common_y,   common_x + 5, common_y + 15,    common_x + 15, common_y + 15,    common_x + 8, common_y + 20,    common_x + 15, common_y + 25,      common_x + 5, common_y + 25,       common_x, common_y + 25 + 10,        common_x - 5, common_y + 25,       common_x - 16, common_y + 25,       common_x - 8, common_y + 15 + 5,      common_x - 15, common_y + 15,      common_x - 5, common_y + 15]
+        self.make_canvas.create_polygon(coord, width=3, fill="blue")
 
