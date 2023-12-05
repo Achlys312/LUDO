@@ -654,3 +654,16 @@ class Ludo:
         temp.append(predictor)
         temp.append(entry_controller)
         self.block_value_predict.append(temp)
+    
+    def red_circle_start_position(self, coin_number):
+        self.make_canvas.delete(self.made_red_coin[int(coin_number)-1])
+        self.made_red_coin[int(coin_number)-1] = self.make_canvas.create_oval(100 + 40, 15+(40*6), 100 +40 + 40, 15+(40*6)+40, fill="red", width=3, outline="black")
+
+        self.red_number_label[int(coin_number)-1].place_forget()
+        red_start_label_x = 100 + 40 + 10
+        red_start_label_y = 15 + (40 * 6) + 5
+        self.red_number_label[int(coin_number)-1].place(x=red_start_label_x, y=red_start_label_y)
+
+        self.red_coin_position[int(coin_number)-1] = 1
+        self.window.update()
+        time.sleep(0.2)
