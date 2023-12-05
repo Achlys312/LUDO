@@ -807,6 +807,30 @@ class Ludo:
 
             self.block_value_predict[3][1]['state'] = NORMAL
             
+              elif color_coin == "yellow":
+            
+            self.num_btns_state_controller(self.block_value_predict[2][2], 0)
 
+            if self.move_yellow_counter == 106:
+                messagebox.showwarning("Destination reached","Reached at the destination")
+
+            elif self.yellow_coin_position[int(coin_number) - 1] == -1 and self.move_yellow_counter == 6:
+                self.yellow_circle_start_position(coin_number)
+                self.yellow_coord_store[int(coin_number) - 1] = 27
+
+            elif self.yellow_coin_position[int(coin_number) - 1] > -1:
+                take_coord = self.make_canvas.coords(self.made_yellow_coin[int(coin_number) - 1])
+                yellow_start_label_x = take_coord[0] + 10
+                yellow_start_label_y = take_coord[1] + 5
+                self.yellow_number_label[int(coin_number) - 1].place(x=yellow_start_label_x, y=yellow_start_label_y)
+
+                if  self.yellow_coin_position[int(coin_number) - 1] + self.move_yellow_counter <= 106:
+                    self.yellow_coin_position[int(coin_number) - 1] = self.motion_of_coin(self.yellow_coin_position[int(coin_number) - 1], self.made_yellow_coin[int(coin_number) - 1], self.yellow_number_label[int(coin_number) - 1], yellow_start_label_x, yellow_start_label_y, "yellow", self.move_yellow_counter)
+                else:
+                   messagebox.showerror("Not possible","No path available")
+                   
+                   self.num_btns_state_controller(self.block_value_predict[2][2])
+                   return
+                   
 
 
