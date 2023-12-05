@@ -537,4 +537,7 @@ class Ludo:
                     else:
                         permission = 1
                         break
-            
+            if permission == 0:
+                self.make_command(None)
+            else:
+                self.num_btns_state_controller(block_value_predict[2])
