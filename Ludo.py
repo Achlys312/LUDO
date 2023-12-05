@@ -1121,3 +1121,7 @@ class Ludo:
                         self.sky_blue_number_label[take_coin_number].place(x=100+40+10, y=30 + (40*6)+(40*3)+40+60+40+10)
 
                     self.made_sky_blue_coin[take_coin_number] = remade_coin
+
+
+    def under_room_traversal_control(self,specific_coin,number_label,number_label_x,number_label_y,path_counter,counter_coin,color_coin):          
+        
