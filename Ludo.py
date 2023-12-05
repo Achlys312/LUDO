@@ -270,5 +270,29 @@ class Ludo:
         self.sky_blue_number_label.append(sky_blue_2_label)
         self.sky_blue_number_label.append(sky_blue_3_label)
         self.sky_blue_number_label.append(sky_blue_4_label)
+        
+           # Make coin for yellow right down block
+        yellow_1_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40, 340+80+15, 340 + (40 * 3) + 40 + 40, 340+80+40+15, width=3, fill="yellow", outline="black")
+        yellow_2_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 340+80+15, 340 + (40 * 3) + 40 + 60 + 40 + 40+20, 340+80+40+15, width=3, fill="yellow", outline="black")
+        yellow_3_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 340 + 80 + 60 + 40 + 15, 340 + (40 * 3) + 40 + 60 + 40 + 40 + 20, 340 + 80 + 60 + 40 + 40 + 15, width=3, fill="yellow", outline="black")
+        yellow_4_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40, 340+80+60+40+15, 340 + (40 * 3) + 40 + 40,340+80+60+40+40+15, width=3, fill="yellow", outline="black")
+        self.made_yellow_coin.append(yellow_1_coin)
+        self.made_yellow_coin.append(yellow_2_coin)
+        self.made_yellow_coin.append(yellow_3_coin)
+        self.made_yellow_coin.append(yellow_4_coin)
+
+        # Make coin under number label for yellow right down block
+        yellow_1_label = Label(self.make_canvas, text="1", font=("Arial", 15, "bold"), bg="yellow", fg="black")
+        yellow_1_label.place(x=340 + (40 * 3) + 40 + 10, y=30 + (40 * 6) + (40 * 3) + 40 + 10)
+        yellow_2_label = Label(self.make_canvas, text="2", font=("Arial", 15, "bold"), bg="yellow", fg="black")
+        yellow_2_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=30 + (40 * 6) + (40 * 3) + 40 + 10)
+        yellow_3_label = Label(self.make_canvas, text="3", font=("Arial", 15, "bold"), bg="yellow", fg="black")
+        yellow_3_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=30 + (40 * 6) + (40 * 3) + 40 + 100 + 10)
+        yellow_4_label = Label(self.make_canvas, text="4", font=("Arial", 15, "bold"), bg="yellow", fg="black")
+        yellow_4_label.place(x=340 + (40 * 3) + 40 + 10, y=30 + (40 * 6) + (40 * 3) + 40 + 100 + 10)
+        self.yellow_number_label.append(yellow_1_label)
+        self.yellow_number_label.append(yellow_2_label)
+        self.yellow_number_label.append(yellow_3_label)
+        self.yellow_number_label.append(yellow_4_label)
 
 
