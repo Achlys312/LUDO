@@ -1078,3 +1078,8 @@ class Ludo:
                     self.yellow_number_label[take_coin_number].place_forget()
                     self.yellow_coin_position[take_coin_number] = -1
                     self.yellow_coord_store[take_coin_number] = -1
+
+                    if take_coin_number == 0:
+                        remade_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40, 340+80+15, 340 + (40 * 3) + 40 + 40, 340+80+40+15, width=3, fill="yellow", outline="black")
+                        self.yellow_number_label[take_coin_number].place(x=340+(40*3) + 40 + 10, y=30 + (40*6)+(40*3)+40+10)
+                    
