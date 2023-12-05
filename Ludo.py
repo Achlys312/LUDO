@@ -209,3 +209,27 @@ class Ludo:
         self.made_red_coin.append(red_2_coin)
         self.made_red_coin.append(red_3_coin)
         self.made_red_coin.append(red_4_coin)
+        
+        red_1_label = Label(self.make_canvas, text="1", font=("Arial", 15, "bold"), bg="red", fg="black")
+        red_1_label.place(x=100 + 40 + 10, y=15 + 40 + 5)
+        red_2_label = Label(self.make_canvas, text="2", font=("Arial", 15, "bold"), bg="red", fg="black")
+        red_2_label.place(x=100 + 40 + 60 + 60 + 10, y=15 + 40 + 5)
+        red_3_label = Label(self.make_canvas, text="3", font=("Arial", 15, "bold"), bg="red", fg="black")
+        red_3_label.place(x=100 + 40 + 60 + 60 + 10, y=15 + 40 + 100 + 5)
+        red_4_label = Label(self.make_canvas, text="4", font=("Arial", 15, "bold"), bg="red", fg="black")
+        red_4_label.place(x=100 + 40 + 10, y=15 + 40 + 100 + 5)
+        self.red_number_label.append(red_1_label)
+        self.red_number_label.append(red_2_label)
+        self.red_number_label.append(red_3_label)
+        self.red_number_label.append(red_4_label)
+
+        # Make coin for green right up block
+        green_1_coin = self.make_canvas.create_oval(340+(40*3)+40, 15 + 40, 340+(40*3)+40 + 40, 15 + 40 + 40, width=3, fill="#00FF00", outline="black")
+        green_2_coin = self.make_canvas.create_oval(340+(40*3)+40+ 60 + 40+20, 15 + 40, 340+(40*3)+40 + 60 + 40 + 40+20, 15 + 40 + 40, width=3, fill="#00FF00", outline="black")
+        green_3_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 15 + 40 + 100, 340 + (40 * 3) + 40 + 60 + 40 + 40 + 20, 15 + 40 + 40 + 100, width=3, fill="#00FF00", outline="black")
+        green_4_coin = self.make_canvas.create_oval(340+(40*3)+40, 15 + 40 + 100, 340+(40*3)+40 + 40, 15 + 40 + 40 + 100, width=3, fill="#00FF00", outline="black")
+        self.made_green_coin.append(green_1_coin)
+        self.made_green_coin.append(green_2_coin)
+        self.made_green_coin.append(green_3_coin)
+        self.made_green_coin.append(green_4_coin)
+
