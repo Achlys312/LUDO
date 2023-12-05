@@ -376,4 +376,9 @@ class Ludo:
         submit_btn = Button(top,text="Submit",bg="#262626",fg="#00FF00",font=("Arial",13,"bold"),relief=RAISED,bd=3,command=filtering,state=DISABLED)
         submit_btn.place(x=330,y=87)
 
-        
+        def operate(ind):
+            if ind:
+                self.robo_prem = 1
+                for player_index in range(2):
+                    self.total_people_play.append(player_index)
+                print(self.total_people_play)
