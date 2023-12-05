@@ -994,3 +994,12 @@ class Ludo:
                     number_label_x += 40
                     counter_coin = 1
 
+                number_label.place_forget()
+                number_label.place(x=number_label_x, y=number_label_y)
+
+                self.window.update()
+                time.sleep(0.2)
+
+            return counter_coin
+        except:
+            print("Force Stop Error Came in motion of coin")
