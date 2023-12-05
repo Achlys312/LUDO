@@ -906,9 +906,15 @@ class Ludo:
 
         if permission_granted_to_proceed:# if that is False, Game is over and not proceed more
             self.make_command(robo_operator)
-                 
+
+    def motion_of_coin(self,counter_coin,specific_coin,number_label,number_label_x ,number_label_y,color_coin,path_counter):
+        try:
+            number_label.place(x=number_label_x,y=number_label_y)
+            while True:
+                if path_counter == 0:
+                    break
             
-                  
+           
                    
 
 
