@@ -473,3 +473,6 @@ class Ludo:
             self.instructional_btn_customization_based_on_current_situation(color_indicator,permanent_block_number,block_value_predict)
         except:
             print("Force Stop Error in Prediction")
+
+    def instructional_btn_customization_based_on_current_situation(self,color_indicator,permanent_block_number,block_value_predict):
+        robo_operator = None
