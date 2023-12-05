@@ -1007,4 +1007,9 @@ class Ludo:
     def coord_overlap(self, counter_coin, color_coin, path_to_traverse_before_overlap):
         if  color_coin!="red":
             for take_coin_number in range(len(self.red_coord_store)):
-                if  self.red_coord_store[take_coin_number] == counter_coin:        
+                if  self.red_coord_store[take_coin_number] == counter_coin:     
+                    if path_to_traverse_before_overlap == 6:
+                        self.six_with_overlap=1
+                    else:
+                        self.time_for-=1
+                        
