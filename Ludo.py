@@ -335,3 +335,8 @@ class Ludo:
         coord = [common_x, common_y,   common_x + 5, common_y + 15,    common_x + 15, common_y + 15,    common_x + 8, common_y + 20,    common_x + 15, common_y + 25,      common_x + 5, common_y + 25,       common_x, common_y + 25 + 10,        common_x - 5, common_y + 25,       common_x - 16, common_y + 25,       common_x - 8, common_y + 15 + 5,      common_x - 15, common_y + 15,      common_x - 5, common_y + 15]
         self.make_canvas.create_polygon(coord, width=3, fill="blue")
 
+    # Total number of players: Control take at first
+    def take_initial_control(self):
+        for i in range(4):
+            self.block_value_predict[i][1]['state'] = DISABLED
+    
