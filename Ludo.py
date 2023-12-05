@@ -413,3 +413,6 @@ class Ludo:
                 except:
                     print("Force Stop Error in Operate")
                 self.block_value_predict[1][1]['state'] = NORMAL
+            else:
+                submit_btn['state'] = NORMAL
+                take_entry['state'] = NORMAL
