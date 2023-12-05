@@ -930,5 +930,11 @@ class Ludo:
                         else:
                             self.time_for -= 1
                     break
+                
+                counter_coin += 1
+                path_counter -=1
+                number_label.place_forget()
+
+                print(counter_coin)
 
 
