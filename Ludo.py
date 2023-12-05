@@ -667,6 +667,7 @@ class Ludo:
         self.red_coin_position[int(coin_number)-1] = 1
         self.window.update()
         time.sleep(0.2)
+        
     def green_circle_start_position(self,coin_number):
         self.make_canvas.delete(self.made_green_coin[int(coin_number)-1])
         self.made_green_coin[int(coin_number)-1] = self.make_canvas.create_oval(100 + (40*8), 15 + 40, 100 +(40*9), 15 + 40+ 40, fill="#00FF00", width=3)
