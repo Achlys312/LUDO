@@ -544,4 +544,9 @@ class Ludo:
                 if self.robo_prem == 1 and block_value_predict == self.block_value_predict[0]:
                     robo_operator = "give"
                 block_value_predict[1]['state'] = DISABLED# Predict btn deactivation
-                
+        else:
+            block_value_predict[1]['state'] = NORMAL# Predict btn activation
+            if self.six_with_overlap == 1:
+                self.time_for -= 1
+                self.six_with_overlap = 0
+            self.make_command()        
