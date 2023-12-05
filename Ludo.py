@@ -485,4 +485,10 @@ class Ludo:
         else:
             temp_coin_position = self.sky_blue_coin_position
 
-        
+        all_in = 1
+        for i in range(4):
+            if temp_coin_position[i] == -1:
+                all_in = 1
+            else:
+                all_in = 0
+                break
