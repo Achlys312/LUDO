@@ -353,3 +353,22 @@ class Ludo:
         take_entry = Entry(top,font=("Arial",18,"bold","italic"),relief=SUNKEN,bd=5,width=12, state=DISABLED)
         take_entry.place(x=130,y=85)
         take_entry.focus()
+
+        def filtering():# Total player input value filtering
+            def input_filtering(coin_number):# Input value Filtering
+                try:
+                    return True if (4>=int(coin_number)>=2) or type(coin_number) == int else False
+                except:
+                    return False
+
+            response_take = input_filtering(take_entry.get())
+            if response_take:
+                for player_index in range(int(take_entry.get())):
+                    self.total_people_play.append(player_index)
+                print(self.total_people_play)
+                self.make_command()
+                top.destroy()
+            else:
+                messagebox.showerror("Input Error", "Please input number of players between 2 and 4")
+                top.destroy()
+                self.take_initial_control()
