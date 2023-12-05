@@ -783,6 +783,30 @@ class Ludo:
                 green_start_label_x = take_coord[0] + 10
                 green_start_label_y = take_coord[1] + 5
                 self.green_number_label[int(coin_number) - 1].place(x=green_start_label_x, y=green_start_label_y)
+                
+             if  self.green_coin_position[int(coin_number) - 1] + self.move_green_counter <= 106:
+                    self.green_coin_position[int(coin_number) - 1] = self.motion_of_coin(self.green_coin_position[int(coin_number) - 1], self.made_green_coin[int(coin_number) - 1], self.green_number_label[int(coin_number) - 1], green_start_label_x, green_start_label_y, "green", self.move_green_counter)
+                else:
+                   messagebox.showerror("Not possible","No path available")
+                   self.num_btns_state_controller(self.block_value_predict[3][2])
+                   return
+
+
+                if  self.green_coin_position[int(coin_number)-1]==22 or self.green_coin_position[int(coin_number)-1]==9 or self.green_coin_position[int(coin_number)-1]==48 or self.green_coin_position[int(coin_number)-1]==35 or self.green_coin_position[int(coin_number)-1]==1 or self.green_coin_position[int(coin_number)-1]==27 or self.green_coin_position[int(coin_number)-1]==40 or self.green_coin_position[int(coin_number)-1]==14:
+                    pass
+                else:
+                    if self.green_coin_position[int(coin_number) - 1] < 100:
+                        self.coord_overlap(self.green_coin_position[int(coin_number) - 1],color_coin, self.move_green_counter)
+
+                self.green_coord_store[int(coin_number) - 1] = self.green_coin_position[int(coin_number) - 1]
+
+            else:
+                messagebox.showerror("Wrong choice", "Sorry, Your coin in not permitted to travel")
+                self.num_btns_state_controller(self.block_value_predict[3][2])
+                return
+
+            self.block_value_predict[3][1]['state'] = NORMAL
+            
 
 
 
