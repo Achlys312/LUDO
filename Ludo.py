@@ -893,6 +893,18 @@ class Ludo:
             print("Robo Store is: ", self.robo_store)
         
         permission_granted_to_proceed = True
+        
+        if  color_coin == "red" and self.red_coin_position[int(coin_number)-1] == 106:
+            permission_granted_to_proceed = self.check_winner_and_runner(color_coin)
+        elif  color_coin == "green" and self.green_coin_position[int(coin_number)-1] == 106:
+            permission_granted_to_proceed = self.check_winner_and_runner(color_coin)
+        elif  color_coin == "yellow" and self.yellow_coin_position[int(coin_number)-1] == 106:
+            permission_granted_to_proceed = self.check_winner_and_runner(color_coin)
+        elif  color_coin == "sky_blue" and self.sky_blue_coin_position[int(coin_number)-1] == 106:
+            permission_granted_to_proceed = self.check_winner_and_runner(color_coin)
+
+        if permission_granted_to_proceed:# if that is False, Game is over and not proceed more
+            self.make_command(robo_operator)
                  
             
                   
