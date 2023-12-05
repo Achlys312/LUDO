@@ -1093,4 +1093,11 @@ class Ludo:
                         self.yellow_number_label[take_coin_number].place(x=340 + (40 * 3) + 40 + 10, y=30 + (40 * 6) + (40 * 3) + 40 + 100 + 10)
 
                     self.made_yellow_coin[take_coin_number] = remade_coin
-                    
+
+        if  color_coin != "sky_blue":
+            for take_coin_number in range(len(self.sky_blue_coord_store)):
+                if  self.sky_blue_coord_store[take_coin_number] == counter_coin:
+                    if path_to_traverse_before_overlap == 6:
+                        self.six_with_overlap = 1
+                    else:
+                        self.time_for -= 1            
