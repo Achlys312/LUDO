@@ -1038,3 +1038,15 @@ class Ludo:
 
                     self.made_red_coin[take_coin_number]=remade_coin   
 
+        if  color_coin != "green":
+            for take_coin_number in range(len(self.green_coord_store)):
+                if  self.green_coord_store[take_coin_number] == counter_coin:
+                    if path_to_traverse_before_overlap == 6:
+                        self.six_with_overlap = 1
+                    else:
+                        self.time_for-=1
+
+                    self.make_canvas.delete(self.made_green_coin[take_coin_number])
+                    self.green_number_label[take_coin_number].place_forget()
+                    self.green_coin_position[take_coin_number] = -1
+                    self.green_coord_store[take_coin_number] = -1
