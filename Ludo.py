@@ -937,4 +937,60 @@ class Ludo:
 
                 print(counter_coin)
 
+                if counter_coin<=5:
+                    self.make_canvas.move(specific_coin, 40, 0)
+                    number_label_x+=40
+                elif counter_coin == 6:
+                    self.make_canvas.move(specific_coin, 40, -40)
+                    number_label_x += 40
+                    number_label_y-=40
+                elif 6< counter_coin <=11:
+                    self.make_canvas.move(specific_coin, 0, -40)
+                    number_label_y -= 40
+                elif counter_coin <=13:
+                    self.make_canvas.move(specific_coin, 40, 0)
+                    number_label_x += 40
+                elif counter_coin <=18:
+                    self.make_canvas.move(specific_coin, 0, 40)
+                    number_label_y += 40
+                elif counter_coin == 19:
+                    self.make_canvas.move(specific_coin, 40, 40)
+                    number_label_x += 40
+                    number_label_y += 40
+                elif counter_coin <=24:
+                    self.make_canvas.move(specific_coin, 40, 0)
+                    number_label_x += 40
+                elif counter_coin <=26:
+                    self.make_canvas.move(specific_coin, 0, 40)
+                    number_label_y += 40
+                elif counter_coin <=31:
+                    self.make_canvas.move(specific_coin, -40, 0)
+                    number_label_x -= 40
+                elif counter_coin == 32:
+                    self.make_canvas.move(specific_coin, -40, 40)
+                    number_label_x -= 40
+                    number_label_y += 40
+                elif counter_coin <= 37:
+                    self.make_canvas.move(specific_coin, 0, 40)
+                    number_label_y += 40
+                elif counter_coin <= 39:
+                    self.make_canvas.move(specific_coin, -40, 0)
+                    number_label_x -= 40
+                elif counter_coin <= 44:
+                    self.make_canvas.move(specific_coin, 0, -40)
+                    number_label_y -= 40
+                elif counter_coin == 45:
+                    self.make_canvas.move(specific_coin, -40, -40)
+                    number_label_x -= 40
+                    number_label_y -= 40
+                elif counter_coin <= 50:
+                    self.make_canvas.move(specific_coin, -40, 0)
+                    number_label_x -= 40
+                elif 50< counter_coin <=52:
+                    self.make_canvas.move(specific_coin, 0, -40)
+                    number_label_y -= 40
+                elif counter_coin == 53:
+                    self.make_canvas.move(specific_coin, 40, 0)
+                    number_label_x += 40
+                    counter_coin = 1
 
