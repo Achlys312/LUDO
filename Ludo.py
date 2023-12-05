@@ -919,6 +919,16 @@ class Ludo:
 
                     counter_coin = self.under_room_traversal_control(specific_coin, number_label, number_label_x, number_label_y, path_counter, counter_coin, color_coin)
 
-                    
+                    if  counter_coin == 106:
+                        
+                        if self.robo_prem == 1 and color_coin == "red":
+                            messagebox.showinfo("Destination reached","Hey! I am at the destination")
+                        else:
+                            messagebox.showinfo("Destination reached","Congrats! You now at the destination")
+                        if path_counter == 6:
+                            self.six_with_overlap = 1
+                        else:
+                            self.time_for -= 1
+                    break
 
 
