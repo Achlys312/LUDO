@@ -480,3 +480,9 @@ class Ludo:
             temp_coin_position = self.red_coin_position
         elif color_indicator == "green":
             temp_coin_position = self.green_coin_position
+        elif color_indicator == "yellow":
+            temp_coin_position = self.yellow_coin_position
+        else:
+            temp_coin_position = self.sky_blue_coin_position
+
+        
