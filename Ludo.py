@@ -83,10 +83,11 @@ class Ludo:
         self.instruction_btn_green()
 
         self.take_initial_control()
-        
-        def board_set_up(self):
+
+
+    def board_set_up(self):
         # Cover Box made
-         self.make_canvas.create_rectangle(100, 15, 100 + (40 * 15), 15 + (40 * 15), width=6, fill="white")
+        self.make_canvas.create_rectangle(100, 15, 100 + (40 * 15), 15 + (40 * 15), width=6, fill="white")
 
         # Square box
         self.make_canvas.create_rectangle(100, 15, 100+240, 15+240, width=3, fill="red")# left up large square
@@ -98,8 +99,8 @@ class Ludo:
         self.make_canvas.create_rectangle(100, (15+240), 100+240, (15+240)+40, width=3)
         self.make_canvas.create_rectangle(100+40, (15 + 240)+40, 100 + 240, (15 + 240) + 40+40, width=3, fill="#F00000")
         self.make_canvas.create_rectangle(100, (15 + 240)+80, 100 + 240, (15 + 240) + 80+40, width=3)
-        
-         # right 3 box(In white region)
+
+        # right 3 box(In white region)
         self.make_canvas.create_rectangle(100+240, 15, 100 + 240+40, 15 + (40*6), width=3)
         self.make_canvas.create_rectangle(100+240+40, 15+40, 100+240+80, 15 + (40*6), width=3, fill="#00FF00")
         self.make_canvas.create_rectangle(100+240+80, 15, 100 + 240+80+40, 15 + (40*6), width=3)
@@ -113,7 +114,8 @@ class Ludo:
         self.make_canvas.create_rectangle(100, (15 + 240)+(40*3), 100 + 240+40, (15 + 240)+(40*3)+(40*6), width=3)
         self.make_canvas.create_rectangle(100+240+40, (15 + 240)+(40*3), 100 + 240+40+40, (15 + 240)+(40*3)+(40*6)-40, width=3, fill="#04d9ff")
         self.make_canvas.create_rectangle(100 + 240+40+40, (15 + 240)+(40*3), 100 + 240+40+40+40, (15 + 240)+(40*3)+(40*6), width=3)
-        
+
+        # All left separation line
         start_x = 100 + 40
         start_y = 15 + 240
         end_x = 100 + 40
@@ -165,7 +167,9 @@ class Ludo:
         self.make_canvas.create_rectangle(100+40+60+60, 15 + 40, 100+40+60+40+60, 15 + 40 + 40, width=3, fill="red")
         self.make_canvas.create_rectangle(100 + 40, 15 + 40+100, 100 + 40 + 40, 15 + 40 + 40+100, width=3, fill="red")
         self.make_canvas.create_rectangle(100 + 40 + 60 + 60, 15 + 40+100, 100 + 40 + 60 + 40 +60, 15 + 40 + 40+100, width=3, fill="red")
-         # Right up square inside box made
+
+
+        # Right up square inside box made
         self.make_canvas.create_rectangle(340+(40*3)+40, 15 + 40, 340+(40*3)+40 + 40, 15 + 40 + 40, width=3, fill="#00FF00")
         self.make_canvas.create_rectangle(340+(40*3)+40+ 60 + 40+20, 15 + 40, 340+(40*3)+40 + 60 + 40 + 40+20, 15 + 40 + 40, width=3, fill="#00FF00")
         self.make_canvas.create_rectangle(340+(40*3)+40, 15 + 40 + 100, 340+(40*3)+40 + 40, 15 + 40 + 40 + 100, width=3, fill="#00FF00")
@@ -185,7 +189,7 @@ class Ludo:
         self.make_canvas.create_rectangle(340 + (40 * 3) + 40, 340+80+60+40+15, 340 + (40 * 3) + 40 + 40,340+80+60+40+40+15, width=3, fill="yellow")
         self.make_canvas.create_rectangle(340 + (40 * 3) + 40 + 60 + 40+20, 340+80+60+40+15,340 + (40 * 3) + 40 + 60 + 40 + 40+20, 340+80+60+40+40+15, width=3, fill="yellow")
 
-          # sky_blue start position
+        # sky_blue start position
         self.make_canvas.create_rectangle(100+240,340+(40*5)-5,100+240+40,340+(40*6)-5,fill="#04d9ff",width=3)
         # Red start position
         self.make_canvas.create_rectangle(100 + 40, 15+(40*6), 100 +40 + 40, 15+(40*6)+40, fill="red", width=3)
@@ -209,7 +213,8 @@ class Ludo:
         self.made_red_coin.append(red_2_coin)
         self.made_red_coin.append(red_3_coin)
         self.made_red_coin.append(red_4_coin)
-        
+
+        # Make coin under number label for red left up block
         red_1_label = Label(self.make_canvas, text="1", font=("Arial", 15, "bold"), bg="red", fg="black")
         red_1_label.place(x=100 + 40 + 10, y=15 + 40 + 5)
         red_2_label = Label(self.make_canvas, text="2", font=("Arial", 15, "bold"), bg="red", fg="black")
@@ -232,8 +237,8 @@ class Ludo:
         self.made_green_coin.append(green_2_coin)
         self.made_green_coin.append(green_3_coin)
         self.made_green_coin.append(green_4_coin)
-        
-         # Make coin under number label for green right up block
+
+        # Make coin under number label for green right up block
         green_1_label = Label(self.make_canvas, text="1", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
         green_1_label.place(x=340 + (40 * 3) + 40 + 10, y=15 + 40 + 5)
         green_2_label = Label(self.make_canvas, text="2", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
@@ -246,7 +251,7 @@ class Ludo:
         self.green_number_label.append(green_2_label)
         self.green_number_label.append(green_3_label)
         self.green_number_label.append(green_4_label)
-        
+
         # Make coin for sky_blue left down block
         sky_blue_1_coin = self.make_canvas.create_oval(100 + 40, 340+80+15, 100 + 40 + 40, 340+80+40+15, width=3, fill="#04d9ff", outline="black")
         sky_blue_2_coin = self.make_canvas.create_oval(100 + 40 + 60 + 40+20, 340+80+15, 100 + 40 + 60 + 40 + 40+20, 340+80+40+15, width=3, fill="#04d9ff", outline="black")
@@ -270,8 +275,8 @@ class Ludo:
         self.sky_blue_number_label.append(sky_blue_2_label)
         self.sky_blue_number_label.append(sky_blue_3_label)
         self.sky_blue_number_label.append(sky_blue_4_label)
-        
-           # Make coin for yellow right down block
+
+        # Make coin for yellow right down block
         yellow_1_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40, 340+80+15, 340 + (40 * 3) + 40 + 40, 340+80+40+15, width=3, fill="yellow", outline="black")
         yellow_2_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 340+80+15, 340 + (40 * 3) + 40 + 60 + 40 + 40+20, 340+80+40+15, width=3, fill="yellow", outline="black")
         yellow_3_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 340 + 80 + 60 + 40 + 15, 340 + (40 * 3) + 40 + 60 + 40 + 40 + 20, 340 + 80 + 60 + 40 + 40 + 15, width=3, fill="yellow", outline="black")
@@ -317,7 +322,7 @@ class Ludo:
         # Up star
         common_x = 100+240+2+18
         common_y = 15 + (40*2) + 2
-         #              A                              B                                   C                             D                                E                                        F                       G                                          H                               I                            J                                      K                                   L
+        #              A                              B                                   C                             D                                E                                        F                       G                                          H                               I                            J                                      K                                   L
         coord = [common_x, common_y,   common_x + 5,   common_y + 15,      common_x + 15, common_y + 15,      common_x + 8, common_y + 20,     common_x + 15, common_y + 25,       common_x + 5, common_y + 25,      common_x, common_y + 25 + 10,    common_x - 5, common_y + 25,     common_x - 16, common_y + 25,     common_x - 8,common_y + 15 + 5,     common_x - 15,common_y + 15,     common_x - 5,common_y + 15]
         self.make_canvas.create_polygon(coord, width=3, fill="blue")
 
@@ -335,11 +340,12 @@ class Ludo:
         coord = [common_x, common_y,   common_x + 5, common_y + 15,    common_x + 15, common_y + 15,    common_x + 8, common_y + 20,    common_x + 15, common_y + 25,      common_x + 5, common_y + 25,       common_x, common_y + 25 + 10,        common_x - 5, common_y + 25,       common_x - 16, common_y + 25,       common_x - 8, common_y + 15 + 5,      common_x - 15, common_y + 15,      common_x - 5, common_y + 15]
         self.make_canvas.create_polygon(coord, width=3, fill="blue")
 
+
     # Total number of players: Control take at first
     def take_initial_control(self):
         for i in range(4):
             self.block_value_predict[i][1]['state'] = DISABLED
-    
+
         # Make other window to control take
         top = Toplevel()
         top.geometry("530x300")
@@ -372,7 +378,7 @@ class Ludo:
                 messagebox.showerror("Input Error", "Please input number of players between 2 and 4")
                 top.destroy()
                 self.take_initial_control()
-        
+
         submit_btn = Button(top,text="Submit",bg="#262626",fg="#00FF00",font=("Arial",13,"bold"),relief=RAISED,bd=3,command=filtering,state=DISABLED)
         submit_btn.place(x=330,y=87)
 
@@ -416,7 +422,7 @@ class Ludo:
             else:
                 submit_btn['state'] = NORMAL
                 take_entry['state'] = NORMAL
-
+        
         mvc_btn = Button(top,text="Play With Computer",bg="#262626",fg="#00FF00",font=("Arial",15,"bold"),relief=RAISED,bd=3,command=lambda: operate(1), activebackground="#262626")
         mvc_btn.place(x=30,y=160)
 
@@ -425,6 +431,7 @@ class Ludo:
 
         top.mainloop()
 
+    # Get block value after prediction based on probability
     def make_prediction(self,color_indicator):
         try:
             if color_indicator == "red":
@@ -445,6 +452,7 @@ class Ludo:
                         if coin_loc>=40 and coin_loc<=46:
                             permanent_block_number = self.move_sky_blue_counter = randint(1, 5)
                             break
+                            
             elif color_indicator == "yellow":
                 block_value_predict = self.block_value_predict[2]
                 permanent_block_number = self.move_yellow_counter = randint(1, 6)
@@ -455,6 +463,7 @@ class Ludo:
 
             block_value_predict[1]['state'] = DISABLED
 
+            # Illusion of coin floating
             temp_counter = 12
             while temp_counter>0:
                 move_temp_counter = randint(1, 6)
@@ -465,7 +474,7 @@ class Ludo:
 
             print("Prediction result: ", permanent_block_number)
 
-            #Permanent predicted value containing image set
+            # Permanent predicted value containing image set
             block_value_predict[0]['image'] = self.block_number_side[permanent_block_number-1]
             if self.robo_prem == 1 and color_indicator == "red":
                 self.window.update()
@@ -473,7 +482,7 @@ class Ludo:
             self.instructional_btn_customization_based_on_current_situation(color_indicator,permanent_block_number,block_value_predict)
         except:
             print("Force Stop Error in Prediction")
-
+        
     def instructional_btn_customization_based_on_current_situation(self,color_indicator,permanent_block_number,block_value_predict):
         robo_operator = None
         if color_indicator == "red":
@@ -492,7 +501,7 @@ class Ludo:
             else:
                 all_in = 0
                 break
-        
+
         if  permanent_block_number == 6:
             self.six_counter += 1
         else:
@@ -525,7 +534,6 @@ class Ludo:
                     else:
                         permission=1
                         break
-
             else:
                 for i in range(4):
                     if  temp[i]>100:
@@ -541,16 +549,18 @@ class Ludo:
                 self.make_command(None)
             else:
                 self.num_btns_state_controller(block_value_predict[2])
+
                 if self.robo_prem == 1 and block_value_predict == self.block_value_predict[0]:
                     robo_operator = "give"
                 block_value_predict[1]['state'] = DISABLED# Predict btn deactivation
+
         else:
             block_value_predict[1]['state'] = NORMAL# Predict btn activation
             if self.six_with_overlap == 1:
                 self.time_for -= 1
                 self.six_with_overlap = 0
-            self.make_command()        
-            
+            self.make_command()
+
         if  permanent_block_number == 6 and self.six_counter<3 and block_value_predict[2][0]['state'] == NORMAL:
             self.time_for-=1
         else:
@@ -558,7 +568,7 @@ class Ludo:
 
         if self.robo_prem == 1 and robo_operator:
             self.robo_judge(robo_operator)
-    
+            
     # Player Scope controller
     def make_command(self, robo_operator=None):
         if  self.time_for == -1:
@@ -575,6 +585,7 @@ class Ludo:
             robo_operator = "predict"
         if robo_operator:
             self.robo_judge(robo_operator)
+
 
     def instruction_btn_red(self):
         block_predict_red = Label(self.make_canvas,image=self.block_number_side[0])
@@ -610,8 +621,8 @@ class Ludo:
         btn_4.place(x=60,y=15+(40*6+40*3)+40 + 70+ 40)
 
         Label(self.make_canvas, text="Player 2", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=12,y=15+(40*6+40*3)+40 + 110+50)
-        self.store_instructional_btn(block_predict_sky_blue, predict_sky_blue, [btn_1,btn_2,btn_3,btn_4]
-        
+        self.store_instructional_btn(block_predict_sky_blue, predict_sky_blue, [btn_1,btn_2,btn_3,btn_4])
+
     def instruction_btn_yellow(self):
         block_predict_yellow = Label(self.make_canvas, image=self.block_number_side[0])
         block_predict_yellow.place(x=100 + (40 * 6 + 40 * 3 + 40 * 6 + 10)+20, y=15 + (40 * 6 + 40 * 3) + 10)
@@ -647,14 +658,14 @@ class Ludo:
         
         Label(self.make_canvas, text="Player 4", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=100+(40*6+40*3+40*6+7), y=15+140+50)
         self.store_instructional_btn(block_predict_green, predict_green, [btn_1,btn_2,btn_3,btn_4])
-    
+
     def store_instructional_btn(self, block_indicator, predictor, entry_controller):
         temp = []
         temp.append(block_indicator)
         temp.append(predictor)
         temp.append(entry_controller)
         self.block_value_predict.append(temp)
-    
+
     def red_circle_start_position(self, coin_number):
         self.make_canvas.delete(self.made_red_coin[int(coin_number)-1])
         self.made_red_coin[int(coin_number)-1] = self.make_canvas.create_oval(100 + 40, 15+(40*6), 100 +40 + 40, 15+(40*6)+40, fill="red", width=3, outline="black")
@@ -667,7 +678,7 @@ class Ludo:
         self.red_coin_position[int(coin_number)-1] = 1
         self.window.update()
         time.sleep(0.2)
-        
+
     def green_circle_start_position(self,coin_number):
         self.make_canvas.delete(self.made_green_coin[int(coin_number)-1])
         self.made_green_coin[int(coin_number)-1] = self.make_canvas.create_oval(100 + (40*8), 15 + 40, 100 +(40*9), 15 + 40+ 40, fill="#00FF00", width=3)
@@ -680,8 +691,8 @@ class Ludo:
         self.green_coin_position[int(coin_number)-1] = 14
         self.window.update()
         time.sleep(0.2)
-        
-         def yellow_circle_start_position(self,coin_number):
+
+    def yellow_circle_start_position(self,coin_number):
         self.make_canvas.delete(self.made_yellow_coin[int(coin_number)-1])
         self.made_yellow_coin[int(coin_number)-1] = self.make_canvas.create_oval(100 + (40 * 6)+(40*3)+(40*4), 15 + (40*8), 100 + (40 * 6)+(40*3)+(40*5), 15 + (40*9), fill="yellow", width=3)
 
@@ -693,8 +704,8 @@ class Ludo:
         self.yellow_coin_position[int(coin_number) - 1] = 27
         self.window.update()
         time.sleep(0.2)
-        
-         def sky_blue_circle_start_position(self,coin_number):
+
+    def sky_blue_circle_start_position(self,coin_number):
         self.make_canvas.delete(self.made_sky_blue_coin[int(coin_number)-1])
         self.made_sky_blue_coin[int(coin_number)-1] = self.make_canvas.create_oval(100+240,340+(40*5)-5,100+240+40,340+(40*6)-5,fill="#04d9ff",width=3)
 
@@ -706,16 +717,16 @@ class Ludo:
         self.sky_blue_coin_position[int(coin_number) - 1] = 40
         self.window.update()
         time.sleep(0.2)
-        
-            def num_btns_state_controller(self, take_nums_btns_list, state_control = 1):
+
+    def num_btns_state_controller(self, take_nums_btns_list, state_control = 1):
         if state_control:
             for num_btn in take_nums_btns_list:
                 num_btn['state'] = NORMAL
         else:
             for num_btn in take_nums_btns_list:
                 num_btn['state'] = DISABLED
-                
-         def main_controller(self, color_coin, coin_number):
+
+    def main_controller(self, color_coin, coin_number):
         robo_operator = None
 
         if  color_coin == "red":
@@ -761,7 +772,8 @@ class Ludo:
             else:
                 messagebox.showerror("Wrong choice","Sorry, Your coin in not permitted to travel")
                 self.num_btns_state_controller(self.block_value_predict[0][2])
-              if self.robo_prem == 1:
+
+                if self.robo_prem == 1:
                     robo_operator = "give"
                     self.robo_judge(robo_operator)
                 return
@@ -784,8 +796,9 @@ class Ludo:
                 green_start_label_x = take_coord[0] + 10
                 green_start_label_y = take_coord[1] + 5
                 self.green_number_label[int(coin_number) - 1].place(x=green_start_label_x, y=green_start_label_y)
-                
-             if  self.green_coin_position[int(coin_number) - 1] + self.move_green_counter <= 106:
+
+
+                if  self.green_coin_position[int(coin_number) - 1] + self.move_green_counter <= 106:
                     self.green_coin_position[int(coin_number) - 1] = self.motion_of_coin(self.green_coin_position[int(coin_number) - 1], self.made_green_coin[int(coin_number) - 1], self.green_number_label[int(coin_number) - 1], green_start_label_x, green_start_label_y, "green", self.move_green_counter)
                 else:
                    messagebox.showerror("Not possible","No path available")
@@ -807,8 +820,8 @@ class Ludo:
                 return
 
             self.block_value_predict[3][1]['state'] = NORMAL
-            
-              elif color_coin == "yellow":
+
+        elif color_coin == "yellow":
             
             self.num_btns_state_controller(self.block_value_predict[2][2], 0)
 
@@ -832,6 +845,7 @@ class Ludo:
                    
                    self.num_btns_state_controller(self.block_value_predict[2][2])
                    return
+
                 if  self.yellow_coin_position[int(coin_number)-1]==22 or self.yellow_coin_position[int(coin_number)-1]==9 or self.yellow_coin_position[int(coin_number)-1]==48 or self.yellow_coin_position[int(coin_number)-1]==35 or self.yellow_coin_position[int(coin_number)-1]==1 or self.yellow_coin_position[int(coin_number)-1]==14 or self.yellow_coin_position[int(coin_number)-1]==40 or self.yellow_coin_position[int(coin_number)-1]==27:
                     pass
                 else:
@@ -856,8 +870,8 @@ class Ludo:
 
             elif self.sky_blue_coin_position[int(coin_number) - 1] == -1 and self.move_sky_blue_counter == 6:
                 self.sky_blue_circle_start_position(coin_number)
-                self.sky_blue_coord_store[int(coin_number) - 1] = 40 
-                
+                self.sky_blue_coord_store[int(coin_number) - 1] = 40
+
             elif self.sky_blue_coin_position[int(coin_number) - 1] > -1:
                 take_coord = self.make_canvas.coords(self.made_sky_blue_coin[int(coin_number) - 1])
                 sky_blue_start_label_x = take_coord[0] + 10
@@ -871,7 +885,8 @@ class Ludo:
                    
                    self.num_btns_state_controller(self.block_value_predict[1][2])
                    return
-                 if  self.sky_blue_coin_position[int(coin_number)-1]==22 or self.sky_blue_coin_position[int(coin_number)-1]==9 or self.sky_blue_coin_position[int(coin_number)-1]==48 or self.sky_blue_coin_position[int(coin_number)-1]==35 or self.sky_blue_coin_position[int(coin_number)-1]==1 or self.sky_blue_coin_position[int(coin_number)-1]==14 or self.sky_blue_coin_position[int(coin_number)-1]==27 or self.sky_blue_coin_position[int(coin_number)-1]==40:
+
+                if  self.sky_blue_coin_position[int(coin_number)-1]==22 or self.sky_blue_coin_position[int(coin_number)-1]==9 or self.sky_blue_coin_position[int(coin_number)-1]==48 or self.sky_blue_coin_position[int(coin_number)-1]==35 or self.sky_blue_coin_position[int(coin_number)-1]==1 or self.sky_blue_coin_position[int(coin_number)-1]==14 or self.sky_blue_coin_position[int(coin_number)-1]==27 or self.sky_blue_coin_position[int(coin_number)-1]==40:
                     pass
                 else:
                     if self.sky_blue_coin_position[int(coin_number) - 1] < 100:
@@ -883,8 +898,8 @@ class Ludo:
                 messagebox.showerror("Wrong choice", "Sorry, Your coin in not permitted to travel")
                 self.num_btns_state_controller(self.block_value_predict[1][2])
                 return
-                
-             self.block_value_predict[1][1]['state'] = NORMAL
+
+            self.block_value_predict[1][1]['state'] = NORMAL
 
         print(self.red_coord_store)
         print(self.green_coord_store)
@@ -894,7 +909,7 @@ class Ludo:
             print("Robo Store is: ", self.robo_store)
         
         permission_granted_to_proceed = True
-        
+
         if  color_coin == "red" and self.red_coin_position[int(coin_number)-1] == 106:
             permission_granted_to_proceed = self.check_winner_and_runner(color_coin)
         elif  color_coin == "green" and self.green_coin_position[int(coin_number)-1] == 106:
@@ -930,7 +945,7 @@ class Ludo:
                         else:
                             self.time_for -= 1
                     break
-                
+
                 counter_coin += 1
                 path_counter -=1
                 number_label.place_forget()
@@ -1004,25 +1019,25 @@ class Ludo:
         except:
             print("Force Stop Error Came in motion of coin")
 
+    # For same position, previous coin deleted and set to the room
     def coord_overlap(self, counter_coin, color_coin, path_to_traverse_before_overlap):
         if  color_coin!="red":
             for take_coin_number in range(len(self.red_coord_store)):
-                if  self.red_coord_store[take_coin_number] == counter_coin:     
+                if  self.red_coord_store[take_coin_number] == counter_coin:
                     if path_to_traverse_before_overlap == 6:
                         self.six_with_overlap=1
                     else:
                         self.time_for-=1
-                    
+
                     self.make_canvas.delete(self.made_red_coin[take_coin_number])
                     self.red_number_label[take_coin_number].place_forget()
                     self.red_coin_position[take_coin_number] = -1
                     self.red_coord_store[take_coin_number] = -1
-
                     if self.robo_prem == 1:
                         self.robo_store.remove(take_coin_number+1)
                         if self.red_coin_position.count(-1)>=1:
                             self.count_robo_stage_from_start = 2
-                    
+
                     if take_coin_number == 0:
                        remade_coin = self.make_canvas.create_oval(100+40, 15+40, 100+40+40, 15+40+40, width=3, fill="red", outline="black")
                        self.red_number_label[take_coin_number].place(x=100 + 40 + 10, y=15 + 40 + 5)
@@ -1036,7 +1051,7 @@ class Ludo:
                         remade_coin = self.make_canvas.create_oval(100 + 40, 15 + 40+100, 100 + 40 + 40, 15 + 40 + 40+100, width=3,fill="red", outline="black")
                         self.red_number_label[take_coin_number].place(x=100 + 40 + 10, y=15 + 40 + 100 + 5)
 
-                    self.made_red_coin[take_coin_number]=remade_coin   
+                    self.made_red_coin[take_coin_number]=remade_coin
 
         if  color_coin != "green":
             for take_coin_number in range(len(self.green_coord_store)):
@@ -1065,6 +1080,7 @@ class Ludo:
                         self.green_number_label[take_coin_number].place(x=340+(40*3) + 40 + 10, y=15 + 40 + 100 + 5)
 
                     self.made_green_coin[take_coin_number] = remade_coin
+
 
         if  color_coin != "yellow":
             for take_coin_number in range(len(self.yellow_coord_store)):
@@ -1100,13 +1116,13 @@ class Ludo:
                     if path_to_traverse_before_overlap == 6:
                         self.six_with_overlap = 1
                     else:
-                        self.time_for -= 1        
+                        self.time_for -= 1
 
                     self.make_canvas.delete(self.made_sky_blue_coin[take_coin_number])
                     self.sky_blue_number_label[take_coin_number].place_forget()
                     self.sky_blue_coin_position[take_coin_number] = -1
                     self.sky_blue_coord_store[take_coin_number]=-1
-    
+
                     if take_coin_number == 0:
                         remade_coin = self.make_canvas.create_oval(100 + 40, 340+80+15, 100 + 40 + 40, 340+80+40+15, width=3, fill="#04d9ff", outline="black")
                         self.sky_blue_number_label[take_coin_number].place(x=100+40+10, y=30 + (40*6)+(40*3)+40+10)
@@ -1123,19 +1139,18 @@ class Ludo:
                     self.made_sky_blue_coin[take_coin_number] = remade_coin
 
 
-    def under_room_traversal_control(self,specific_coin,number_label,number_label_x,number_label_y,path_counter,counter_coin,color_coin):          
-
+    def under_room_traversal_control(self,specific_coin,number_label,number_label_x,number_label_y,path_counter,counter_coin,color_coin):
         if color_coin == "red" and counter_coin >= 100:
             if int(counter_coin)+int(path_counter)<=106:
                counter_coin = self.room_red_traversal(specific_coin, number_label, number_label_x, number_label_y, path_counter, counter_coin)
 
         elif color_coin == "green" and counter_coin >= 100:
-            if int(counter_coin)+int(path_counter)<=106:
-                counter_coin = self.room_green_traversal(specific_coin, number_label, number_label_x, number_label_y, path_counter, counter_coin)
-        
+            if  int(counter_coin) + int(path_counter) <= 106:
+                counter_coin = self.room_green_traversal(specific_coin, number_label, number_label_x, number_label_y,path_counter,counter_coin)
+
         elif color_coin == "yellow" and counter_coin >= 100:
-            if int(counter_coin)+int(path_counter)<=106:
-                counter_coin = self.room_yellow_traversal(specific_coin, number_label, number_label_x, number_label_y, path_counter, counter_coin)
+            if  int(counter_coin) + int(path_counter) <= 106:
+                counter_coin = self.room_yellow_traversal(specific_coin, number_label, number_label_x, number_label_y,path_counter,counter_coin)
 
         elif color_coin == "sky_blue" and counter_coin >= 100:
             if  int(counter_coin) + int(path_counter) <= 106:
@@ -1154,7 +1169,7 @@ class Ludo:
             self.window.update()
             time.sleep(0.2)
         return counter_coin
-    
+
     def room_green_traversal(self, specific_coin, number_label, number_label_x, number_label_y, path_counter, counter_coin):
         while path_counter > 0:
             counter_coin += 1
@@ -1176,7 +1191,7 @@ class Ludo:
             self.window.update()
             time.sleep(0.2)
         return counter_coin
-    
+
     def room_sky_blue_traversal(self, specific_coin, number_label, number_label_x, number_label_y,path_counter,counter_coin):
         while path_counter > 0:
             counter_coin += 1
@@ -1187,7 +1202,7 @@ class Ludo:
             self.window.update()
             time.sleep(0.2)
         return counter_coin
-    
+
     def check_winner_and_runner(self,color_coin):
         destination_reached = 0 # Check for all specific color coins
         if color_coin == "red":
@@ -1241,7 +1256,6 @@ class Ludo:
             print("Winner not decided")
 
         return True
-
 
     def robo_judge(self, ind="give"):
         if ind == "give":# For give the value
@@ -1439,6 +1453,7 @@ class Ludo:
         else:
             self.make_prediction("red")# Prediction Function Call
 
+
 if __name__ == '__main__':
     window = Tk()
     window.geometry("800x630")
@@ -1454,4 +1469,3 @@ if __name__ == '__main__':
     block_one_side = ImageTk.PhotoImage(Image.open("Images/1_block.png").resize((33, 33), Image.ANTIALIAS))
     Ludo(window,block_six_side,block_five_side,block_four_side,block_three_side,block_two_side,block_one_side)
     window.mainloop()
-                
