@@ -476,3 +476,7 @@ class Ludo:
 
     def instructional_btn_customization_based_on_current_situation(self,color_indicator,permanent_block_number,block_value_predict):
         robo_operator = None
+        if color_indicator == "red":
+            temp_coin_position = self.red_coin_position
+        elif color_indicator == "green":
+            temp_coin_position = self.green_coin_position
