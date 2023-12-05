@@ -398,7 +398,18 @@ class Ludo:
                     else: 
                         command_play['text'] = f"                                        Enjoy this Game"
                     command_play.place(x=10, y=260)
-                    
+
                 time_is = 10
                 place_ins = Label(top, text="", font=("Arial", 20, "bold"), fg="#FF0000", bg="#141414")
                 command_play = Label(top, text="", font=("Arial", 12, "bold"), fg="#af7439", bg="#141414")
+
+                try:
+                    while time_is:
+                        delay_with_instrctions(time_is)
+                        time_is-=1
+                        self.window.update()
+                        time.sleep(1)
+                    top.destroy()
+                except:
+                    print("Force Stop Error in Operate")
+                self.block_value_predict[1][1]['state'] = NORMAL
