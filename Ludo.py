@@ -760,5 +760,29 @@ class Ludo:
             else:
                 messagebox.showerror("Wrong choice","Sorry, Your coin in not permitted to travel")
                 self.num_btns_state_controller(self.block_value_predict[0][2])
+              if self.robo_prem == 1:
+                    robo_operator = "give"
+                    self.robo_judge(robo_operator)
+                return
+
+            self.block_value_predict[0][1]['state'] = NORMAL
+
+
+        elif color_coin == "green":
+            self.num_btns_state_controller(self.block_value_predict[3][2], 0)
+
+            if self.move_green_counter == 106:
+                messagebox.showwarning("Destination reached","Reached at the destination")
+
+            elif self.green_coin_position[int(coin_number) - 1] == -1 and self.move_green_counter == 6:
+                self.green_circle_start_position(coin_number)
+                self.green_coord_store[int(coin_number) - 1] = 14
+
+            elif self.green_coin_position[int(coin_number) - 1] > -1:
+                take_coord = self.make_canvas.coords(self.made_green_coin[int(coin_number) - 1])
+                green_start_label_x = take_coord[0] + 10
+                green_start_label_y = take_coord[1] + 5
+                self.green_number_label[int(coin_number) - 1].place(x=green_start_label_x, y=green_start_label_y)
+
 
 
