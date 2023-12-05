@@ -416,3 +416,13 @@ class Ludo:
             else:
                 submit_btn['state'] = NORMAL
                 take_entry['state'] = NORMAL
+
+        mvc_btn = Button(top,text="Play With Computer",bg="#262626",fg="#00FF00",font=("Arial",15,"bold"),relief=RAISED,bd=3,command=lambda: operate(1), activebackground="#262626")
+        mvc_btn.place(x=30,y=160)
+
+        mvh_btn = Button(top,text="Play With Friends",bg="#262626",fg="#00FF00",font=("Arial",15,"bold"),relief=RAISED,bd=3,command=lambda: operate(0), activebackground="#262626")
+        mvh_btn.place(x=260,y=160)
+
+        top.mainloop()
+
+        
