@@ -550,3 +550,5 @@ class Ludo:
                 self.time_for -= 1
                 self.six_with_overlap = 0
             self.make_command()        
+            
+        
