@@ -610,7 +610,7 @@ class Ludo:
         btn_4.place(x=60,y=15+(40*6+40*3)+40 + 70+ 40)
 
         Label(self.make_canvas, text="Player 2", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=12,y=15+(40*6+40*3)+40 + 110+50)
-        self.store_instructional_btn(block_predict_sky_blue, predict_sky_blue, [btn_1,btn_2,btn_3,btn_4]
+        self.store_instructional_btn(block_predict_sky_blue, predict_sky_blue, [btn_1,btn_2,btn_3,btn_4])
         
     def instruction_btn_yellow(self):
         block_predict_yellow = Label(self.make_canvas, image=self.block_number_side[0])
@@ -681,7 +681,7 @@ class Ludo:
         self.window.update()
         time.sleep(0.2)
         
-         def yellow_circle_start_position(self,coin_number):
+    def yellow_circle_start_position(self,coin_number):
         self.make_canvas.delete(self.made_yellow_coin[int(coin_number)-1])
         self.made_yellow_coin[int(coin_number)-1] = self.make_canvas.create_oval(100 + (40 * 6)+(40*3)+(40*4), 15 + (40*8), 100 + (40 * 6)+(40*3)+(40*5), 15 + (40*9), fill="yellow", width=3)
 
@@ -694,7 +694,7 @@ class Ludo:
         self.window.update()
         time.sleep(0.2)
         
-         def sky_blue_circle_start_position(self,coin_number):
+    def sky_blue_circle_start_position(self,coin_number):
         self.make_canvas.delete(self.made_sky_blue_coin[int(coin_number)-1])
         self.made_sky_blue_coin[int(coin_number)-1] = self.make_canvas.create_oval(100+240,340+(40*5)-5,100+240+40,340+(40*6)-5,fill="#04d9ff",width=3)
 
@@ -707,7 +707,7 @@ class Ludo:
         self.window.update()
         time.sleep(0.2)
         
-            def num_btns_state_controller(self, take_nums_btns_list, state_control = 1):
+    def num_btns_state_controller(self, take_nums_btns_list, state_control = 1):
         if state_control:
             for num_btn in take_nums_btns_list:
                 num_btn['state'] = NORMAL
@@ -715,7 +715,7 @@ class Ludo:
             for num_btn in take_nums_btns_list:
                 num_btn['state'] = DISABLED
                 
-         def main_controller(self, color_coin, coin_number):
+    def main_controller(self, color_coin, coin_number):
         robo_operator = None
 
         if  color_coin == "red":
@@ -801,25 +801,25 @@ class Ludo:
 
                 self.green_coord_store[int(coin_number) - 1] = self.green_coin_position[int(coin_number) - 1]
 
-            else:
+        else:
                 messagebox.showerror("Wrong choice", "Sorry, Your coin in not permitted to travel")
                 self.num_btns_state_controller(self.block_value_predict[3][2])
                 return
 
-            self.block_value_predict[3][1]['state'] = NORMAL
+        self.block_value_predict[3][1]['state'] = NORMAL
             
-              elif color_coin == "yellow":
+        elif color_coin == "yellow":
             
-            self.num_btns_state_controller(self.block_value_predict[2][2], 0)
+        self.num_btns_state_controller(self.block_value_predict[2][2], 0)
 
-            if self.move_yellow_counter == 106:
+        if self.move_yellow_counter == 106:
                 messagebox.showwarning("Destination reached","Reached at the destination")
 
-            elif self.yellow_coin_position[int(coin_number) - 1] == -1 and self.move_yellow_counter == 6:
+         elif self.yellow_coin_position[int(coin_number) - 1] == -1 and self.move_yellow_counter == 6:
                 self.yellow_circle_start_position(coin_number)
                 self.yellow_coord_store[int(coin_number) - 1] = 27
 
-            elif self.yellow_coin_position[int(coin_number) - 1] > -1:
+        elif self.yellow_coin_position[int(coin_number) - 1] > -1:
                 take_coord = self.make_canvas.coords(self.made_yellow_coin[int(coin_number) - 1])
                 yellow_start_label_x = take_coord[0] + 10
                 yellow_start_label_y = take_coord[1] + 5
